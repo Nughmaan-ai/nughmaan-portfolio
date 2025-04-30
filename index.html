@@ -30,6 +30,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     @keyframes gradient {
@@ -64,6 +65,49 @@
     .btn:hover {
       background: #ff4b2b;
     }
+
+    .profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      flex-direction: column;
+    }
+
+    .profile-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .skills, .projects {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
   </style>
 </head>
 <body>
@@ -74,6 +118,40 @@
   </p>
   <a href="#projects" class="btn" data-aos="zoom-in" data-aos-delay="600">View My Work</a>
 
+  <!-- Profile Image and Bio Section -->
+  <div class="profile-container" data-aos="fade-up" data-aos-delay="900">
+    <img src="your-photo.jpg" alt="Nughmaan's Profile Photo" class="profile-img" />
+    <p>Student | Web Developer | Travel & Tourism Enthusiast</p>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills">
+    <div class="card" data-aos="fade-up" data-aos-delay="1200">
+      <h3>Web Development</h3>
+      <p>HTML, CSS, JavaScript, React.js</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="1400">
+      <h3>UI/UX Design</h3>
+      <p>Figma, Adobe XD, Wireframing</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="1600">
+      <h3>Travel Promotion</h3>
+      <p>Content Creation, Marketing, Branding</p>
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="projects" id="projects">
+    <div class="card" data-aos="fade-up" data-aos-delay="1800">
+      <h3>GoMyArea Travel Promotion</h3>
+      <p>Created a promotional website to attract tourists and promote travel packages for GoMyArea.com.</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="2000">
+      <h3>Mini Tesla Coil</h3>
+      <p>A university project involving the development of wireless power transfer using a Tesla Coil.</p>
+    </div>
+  </div>
+
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
@@ -81,5 +159,3 @@
   </script>
 </body>
 </html>
-
-
