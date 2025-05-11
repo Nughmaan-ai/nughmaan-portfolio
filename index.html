@@ -17,6 +17,7 @@
       background-size: 400% 400%;
       animation: rgbDarkClean 18s ease infinite;
       color: #fff;
+      overflow-x: hidden;
     }
     @keyframes rgbDarkClean {
       0% { background-position: 0% 50%; }
@@ -69,7 +70,7 @@
     .tabcontent {
       display: none;
       padding: 40px 30px;
-      animation: fadeEffect 0.8s;
+      animation: fadeSlideIn 0.8s ease-out;
       max-width: 900px;
       margin: 30px auto;
       text-align: left;
@@ -78,8 +79,8 @@
       line-height: 1.8;
       color: #fff;
     }
-    @keyframes fadeEffect {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .download-btn {
@@ -144,8 +145,25 @@
       align-items: center;
       z-index: 9999;
     }
+    .circle-loader {
+      width: 80px;
+      height: 80px;
+      border: 8px solid #fff;
+      border-top: 8px solid transparent;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
     #loader h1 {
       font-size: 2rem;
+      margin-top: 20px;
+    }
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -153,6 +171,7 @@
 
   <!-- Loader -->
   <div id="loader">
+    <div class="circle-loader"></div>
     <h1>Loading...</h1>
   </div>
 
@@ -179,13 +198,8 @@
         Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.<br><br>
         <strong>Business Travel Experience:</strong> Visited Dubai, UAE (2 months), and Saudi Arabia: Dammam, Riyadh, Jeddah (1 week each) for business coordination and partnership development.
       </p>
-
       <p><strong>Internship – Okinawa Electric Vehicles</strong><br>
         Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.
-      </p>
-
-      <p><strong>Entrepreneur – Watch Trading Business</strong><br>
-        Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.
       </p>
     </div>
 
@@ -214,43 +228,13 @@
             <li>PCB Design</li>
           </ul>
         </li>
-        <li><strong>Soft Skills:</strong>
-          <ul>
-            <li>Leadership</li>
-            <li>Creativity</li>
-            <li>Critical Thinking</li>
-            <li>Multi-tasking</li>
-            <li>Time Management</li>
-            <li>Problem Solving</li>
-            <li>Teamwork</li>
-          </ul>
-        </li>
-        <li><strong>Certifications:</strong>
-          <ul>
-            <li>Google Fundamentals of Digital Marketing – Google</li>
-            <li>Infosys Foundation – Unnatti Sixer (2023)</li>
-            <li>PCB Design by Vi Microsystems</li>
-            <li>Intermediate Microsoft Office – Microsoft Partner</li>
-            <li>National Cyber Olympiad (2016 & 2018)</li>
-            <li>Certificate by USS (Unique Software Solution)</li>
-          </ul>
-        </li>
       </ul>
     </div>
 
     <div id="projects" class="tabcontent">
       <h2>Projects</h2>
       <p><strong>Solar Fast Charger</strong><br>
-        Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.</p>
-
-      <p><strong>Mini Tesla Coil</strong><br>
-        Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.</p>
-
-      <p><strong>Digital Promotion Campaign</strong><br>
-        Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.</p>
-
-      <p><strong>FX Boss – Automated Forex Trading EA</strong><br>
-        Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.</p>
+        Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery.</p>
     </div>
 
     <div id="contact" class="tabcontent">
@@ -270,7 +254,7 @@
         document.getElementById("loader").style.display = "none";
         document.getElementById("main-content").style.display = "block";
         document.querySelector(".tablink").click();
-      }, 1500);
+      }, 3000);
     });
 
     function openTab(evt, tabName) {
@@ -289,4 +273,3 @@
 
 </body>
 </html>
-
