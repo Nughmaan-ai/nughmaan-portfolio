@@ -37,7 +37,6 @@
     }
     h1 {
       font-size: 2.5rem;
-      color: #fff;
     }
     p.intro, .about-me {
       font-size: 1.2rem;
@@ -69,14 +68,13 @@
     .tabcontent {
       display: none;
       padding: 40px 30px;
-      animation: fadeEffect 1.5s;
+      animation: fadeEffect 0.8s;
       max-width: 900px;
       margin: 30px auto;
       text-align: left;
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       line-height: 1.8;
-      color: #fff;
     }
     @keyframes fadeEffect {
       from { opacity: 0; transform: translateY(20px); }
@@ -92,7 +90,6 @@
       font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
-      display: inline-block;
     }
     .download-btn:hover {
       background: #0056b3;
@@ -102,7 +99,6 @@
     }
     ul li {
       margin-bottom: 10px;
-      line-height: 1.8;
     }
     h2 {
       font-size: 2rem;
@@ -110,167 +106,122 @@
       padding: 10px 15px;
       border-radius: 8px;
       margin-top: 20px;
-      color: #fff;
     }
-    .highlight {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .tabcontent p + p {
-      margin-top: 20px;
-    }
-    .tabcontent ul + ul {
-      margin-top: 20px;
-    }
-    .tabcontent p strong {
+    .loading {
+      text-align: center;
       font-size: 1.5rem;
-      display: block;
-      margin-top: 15px;
+      padding: 50px;
+      animation: fadeEffect 1.5s;
     }
-    /* Contact Info Loader */
-    .loader {
-      display: inline-block;
-      position: relative;
-    }
-    .dot {
-      width: 8px;
-      height: 8px;
-      margin: 0 4px;
-      border-radius: 50%;
-      background-color: #fff;
-      animation: blink 1.5s infinite;
-    }
-    .dot:nth-child(1) {
-      animation-delay: 0s;
-    }
-    .dot:nth-child(2) {
-      animation-delay: 0.3s;
-    }
-    .dot:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-    @keyframes blink {
-      0%, 50%, 100% {
-        opacity: 0;
-      }
-      25%, 75% {
-        opacity: 1;
-      }
-    }
-
-    /* GoMyArea Description */
-    .go-my-area-description {
-      text-align: left;
-      margin-top: 20px;
-      font-size: 1.2rem;
-    }
-
-    /* Contact Info Letter White */
     .contact-info {
-      background-color: white;
-      padding: 15px;
-      border-radius: 8px;
-      color: #000;
-      font-size: 1.2rem;
-      display: inline-block;
-      text-align: left;
+      color: white;
+      padding-top: 10px;
+      text-align: center;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
-  <div class="container" id="main-content">
+  <div class="container">
     <img src="MY PASSPORT SIZE PHOTO.jpeg" alt="Nughmaan" class="profile-pic">
     <h1>👋 Hi, I’m Nughmaan D.ECE</h1>
     <p class="about-me">
-      A driven student and experienced Visa Executive who is passionate about blending travel industry knowledge with technical expertise. With a diploma in Electronics and Communication Engineering and a strong foundation in digital tools, I actively pursue growth in technology, entrepreneurship, and cross-border collaboration.
+      💼 A driven student and experienced <strong>Visa Executive</strong> with technical skills and a passion for technology, travel, and entrepreneurship. Combining <strong>Electronics & Communication</strong> knowledge with B2B/B2C experience in the tourism industry.
     </p>
-    <a href="my resume.pdf" download class="download-btn">Download My CV</a>
+    <a href="my resume.pdf" download class="download-btn">📄 Download My CV</a>
 
     <nav>
-      <button class="tablink" onclick="openTab(event, 'experience')">🛠️ Experience</button>
-      <button class="tablink" onclick="openTab(event, 'education')">🎓 Education</button>
-      <button class="tablink" onclick="openTab(event, 'skills')">🧠 Skills & Certificates</button>
-      <button class="tablink" onclick="openTab(event, 'projects')">📁 Projects</button>
-      <button class="tablink" onclick="openTab(event, 'contact')">📞 Contact Info</button>
+      <button class="tablink" onclick="openTab(event, 'experience')">Experience</button>
+      <button class="tablink" onclick="openTab(event, 'education')">Education</button>
+      <button class="tablink" onclick="openTab(event, 'skills')">Skills</button>
+      <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
+      <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
     </nav>
 
     <div id="experience" class="tabcontent">
-      <h2>Work Experience</h2>
-      <p><strong>Go My Area Tours and Travels</strong> (2024 - Present)<br>
-      As a Visa Executive, I am responsible for coordinating visa applications, ensuring compliance with travel regulations, and providing excellent customer service to our clients. In addition, I contribute to content marketing strategies and promotional campaigns.</p>
+      <h2>💼 Work Experience</h2>
+      <p><strong>Go My Area Tours & Travels & Bab Al Noor LLC</strong> (2024–Present)<br>
+      Managed B2B/B2C travel services, visa processing, and digital marketing for clients in UAE and India.</p>
 
       <p><strong>Internship – Okinawa Electric Vehicles</strong> (2023)<br>
-      Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.</p>
+      Hands-on training in EV modules, embedded controllers, and live vehicle diagnostics.</p>
 
-      <p><strong>Watch Trading Business</strong> (2022 - Present)<br>
-      Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.</p>
+      <p><strong>⌚ Entrepreneur – Watch Business</strong> (2022–Present)<br>
+      Selling rare/vintage timepieces online and directly. Specialized in sourcing, marketing, and logistics.</p>
     </div>
 
     <div id="education" class="tabcontent">
-      <h2>Education</h2>
+      <h2>🎓 Education</h2>
       <ul>
-        <li><strong>Google Fundamentals of Digital Marketing</strong> – Google Digital Garage (2025)</li>
-        <li><strong>Diploma in Electronics & Communication Engineering</strong> – Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
+        <li><strong>Google Digital Marketing</strong> – Google Digital Garage (2025)</li>
+        <li><strong>Diploma in ECE</strong> – Valivalam Desikar Polytechnic College (2021–2024)</li>
       </ul>
     </div>
 
     <div id="skills" class="tabcontent">
-      <h2>Skills & Certifications</h2>
-      <div class="go-my-area-description">
-        <h3>Skills:</h3>
-        <ul>
-          <li><strong>Technical Skills:</strong>
-            <ul>
-              <li>MS Office</li>
-              <li>HTML</li>
-              <li>Flash Multimedia</li>
-              <li>FrontPage</li>
-              <li>C Programming</li>
-              <li>Canva</li>
-              <li>Ninthware</li>
-              <li>Foxit</li>
-              <li>Marg ERP</li>
-              <li>PCB Design</li>
-            </ul>
-          </li>
-          <li><strong>Soft Skills:</strong>
-            <ul>
-              <li>Leadership</li>
-              <li>Creativity</li>
-              <li>Critical Thinking</li>
-              <li>Multi-tasking</li>
-              <li>Time Management</li>
-              <li>Problem Solving</li>
-              <li>Teamwork</li>
-            </ul>
-          </li>
-        </ul>
-        <h3>Certifications:</h3>
-        <ul>
-          <li>Google Fundamentals of Digital Marketing – Google</li>
-          <li>Infosys Foundation – Unnatti Sixer (2023)</li>
-          <li>PCB Design by Vi Microsystems</li>
-          <li>Intermediate Microsoft Office – Microsoft Partner</li>
-          <li>National Cyber Olympiad (2016 & 2018)</li>
-          <li>Certificate by USS (Unique Software Solution)</li>
-        </ul>
-      </div>
+      <h2>🛠️ Skills & Certificates</h2>
+      <ul>
+        <li><strong>💻 Technical Skills:</strong><br>
+          MS Office, HTML, Flash, FrontPage, C, Canva, Ninthware, Foxit, Marg ERP, PCB Design</li>
+        <li><strong>🧠 Soft Skills:</strong><br>
+          Leadership, Creativity, Critical Thinking, Time Management, Problem Solving</li>
+        <li><strong>📜 Certifications:</strong>
+          <ul>
+            <li>Google Digital Marketing</li>
+            <li>Infosys Foundation – Unnatti Sixer (2023)</li>
+            <li>PCB Design – Vi Microsystems</li>
+            <li>Microsoft Office – Intermediate</li>
+            <li>National Cyber Olympiad (2016, 2018)</li>
+            <li>USS – Unique Software Solution</li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
     <div id="projects" class="tabcontent">
-      <h2>Projects</h2>
-      <p><strong>Solar Fast Charger</strong><br>
-      Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.</p>
+      <h2>🚀 Projects</h2>
+      <p><strong>🔋 Solar Fast Charger:</strong> High-efficiency solar energy system for remote areas.</p>
+      <p><strong>⚡ Mini Tesla Coil:</strong> Educational demonstration of high-frequency electromagnetism.</p>
+      <p><strong>📢 GoMyArea Promotion Campaign:</strong> Canva & ERP-based banners and digital marketing tools.</p>
+      <p><strong>📈 FX Boss EA:</strong> A fully automated MQL5 forex bot using ICT/SMC strategies.</p>
+    </div>
 
-      <p><strong>Mini Tesla Coil</strong><br>
-      Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.</p>
+    <div id="contact" class="tabcontent">
+      <h2>📞 Contact Info</h2>
+      <p class="contact-info">
+        📧 Email: nughmaandece@gmail.com<br>
+        📍 Location: Karaikal, Tamil Nadu, India<br>
+        📱 WhatsApp: +91 7598004283<br>
+        📸 Instagram: <a href="https://instagram.com/17nuxo" target="_blank" style="color: white">@17nuxo</a>
+      </p>
+    </div>
 
-      <p><strong>Digital Promotion Campaign</strong><br>
-      Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.</p>
+    <div id="loading" class="loading">⏳ Loading...</div>
+  </div>
 
-      <p><strong>FX Boss – Automated Forex Trading EA</strong><br>
-      Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on market analysis, with stop loss, risk management
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      const tablinks = document.getElementsByClassName("tablink");
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("active");
+    }
+
+    window.onload = function () {
+      document.getElementById("loading").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+        document.querySelector(".tablink").click();
+      }, 1500);
+    };
+  </script>
+</body>
+</html>
+
 
