@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nughmaan Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
     body {
-      background: linear-gradient(135deg, #120078, #9d0191, #fd3a69);
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #320d4d, #1f1c2c);
       background-size: 400% 400%;
-      animation: rgbDark 15s ease infinite;
+      animation: rgbDarkClean 18s ease infinite;
       color: #fff;
     }
-    @keyframes rgbDark {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    @keyframes rgbDarkClean {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .container {
       text-align: center;
@@ -31,17 +35,15 @@
       border: 4px solid #fff;
       margin-bottom: 20px;
     }
-    h1 { font-size: 2.5rem; color: #fff; }
-    p.intro {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      color: #eee;
-    }
-    .about-me {
-      font-size: 1.25rem;
-      padding: 30px 20px;
-      text-align: center;
+    h1 {
+      font-size: 2.5rem;
       color: #fff;
+    }
+    p.intro, .about-me {
+      font-size: 1.2rem;
+      margin: 20px auto;
+      max-width: 800px;
+      color: #eee;
       line-height: 1.8;
     }
     nav {
@@ -71,19 +73,19 @@
       max-width: 900px;
       margin: 30px auto;
       text-align: left;
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       line-height: 1.8;
       color: #fff;
     }
     @keyframes fadeEffect {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .download-btn {
       margin-top: 20px;
       padding: 12px 25px;
-      background: #ff5722;
+      background: #007BFF;
       color: #fff;
       border: none;
       border-radius: 6px;
@@ -93,10 +95,15 @@
       display: inline-block;
     }
     .download-btn:hover {
-      background: #e64a19;
+      background: #0056b3;
     }
-    ul { padding-left: 20px; }
-    ul li { margin-bottom: 10px; line-height: 1.8; }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
     h2 {
       font-size: 2rem;
       background-color: rgba(255, 255, 255, 0.1);
@@ -132,22 +139,22 @@
 
     <div id="experience" class="tabcontent">
       <h2>Work Experience</h2>
-      <!-- Your experience content -->
+      <p>Content for experience goes here.</p>
     </div>
 
     <div id="education" class="tabcontent">
       <h2>Education</h2>
-      <!-- Your education content -->
+      <p>Content for education goes here.</p>
     </div>
 
     <div id="skills" class="tabcontent">
       <h2>Skills & Certifications</h2>
-      <!-- Your skills content -->
+      <p>Content for skills goes here.</p>
     </div>
 
     <div id="projects" class="tabcontent">
       <h2>Projects</h2>
-      <!-- Your project content -->
+      <p>Content for projects goes here.</p>
     </div>
   </div>
 
@@ -171,4 +178,5 @@
   </script>
 </body>
 </html>
+
 
