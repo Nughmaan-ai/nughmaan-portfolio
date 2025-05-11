@@ -130,6 +130,36 @@
       display: block;
       margin-top: 15px;
     }
+
+    /* Custom Styling for Skills and Certificates */
+    .skills-certificate-section {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .skills-certificate-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .skills-certificate-section ul {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: left;
+    }
+    .skills-certificate-section li {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    .skills-certificate-section li:before {
+      content: "✔️";
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
@@ -148,61 +178,46 @@
       <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
     </nav>
 
-    <div id="experience" class="tabcontent">
-      <h2>Work Experience</h2>
-      <p><strong>Visa & Ticketing Executive</strong><br>
-      Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.<br><br>
-      <strong>Business Travel Experience:</strong> Visited Dubai, UAE (2 months), and Saudi Arabia: Dammam, Riyadh, Jeddah (1 week each) for business coordination and partnership development.
-      </p>
+    <div id="skills" class="tabcontent skills-certificate-section">
+      <h2>🛠️ Skills & Certifications</h2>
 
-      <p><strong>Internship – Okinawa Electric Vehicles</strong><br>
-      Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.
-      </p>
-
-      <p><strong>Entrepreneur – Watch Trading Business</strong><br>
-      Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.
-      </p>
-    </div>
-
-    <div id="education" class="tabcontent">
-      <h2>Education</h2>
+      <!-- Technical Skills -->
+      <h3>💻 Technical Skills</h3>
       <ul>
-        <li><strong>Google Fundamentals of Digital Marketing</strong> – Google Digital Garage (2025)</li>
-        <li><strong>Diploma in Electronics & Communication Engineering</strong> – Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
+        <li>MS Office</li>
+        <li>HTML</li>
+        <li>Flash Multimedia</li>
+        <li>FrontPage</li>
+        <li>C Programming</li>
+        <li>Canva</li>
+        <li>Ninthware</li>
+        <li>Foxit</li>
+        <li>Marg ERP</li>
+        <li>PCB Design</li>
       </ul>
-    </div>
 
-    <div id="skills" class="tabcontent">
-      <h2>Skills & Certifications</h2>
+      <!-- Soft Skills -->
+      <h3>🤝 Soft Skills</h3>
       <ul>
-        <li><strong>Technical Skills:</strong> MS Office, HTML, Flash Multimedia, FrontPage, C Programming, Canva, Ninthware, Foxit, Marg ERP, PCB Design</li>
-        <li><strong>Soft Skills:</strong> Leadership, Creativity, Critical Thinking, Multi-tasking, Time Management, Problem Solving, Teamwork</li>
-        <li><strong>Certifications:</strong>
-          <ul>
-            <li>Google Fundamentals of Digital Marketing – Google</li>
-            <li>Infosys Foundation – Unnatti Sixer (2023)</li>
-            <li>PCB Design by Vi Microsystems</li>
-            <li>Intermediate Microsoft Office – Microsoft Partner</li>
-            <li>National Cyber Olympiad (2016 & 2018)</li>
-            <li>Certificate by USS (Unique Software Solution)</li>
-          </ul>
-        </li>
+        <li>Leadership</li>
+        <li>Creativity</li>
+        <li>Critical Thinking</li>
+        <li>Multi-tasking</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+        <li>Teamwork</li>
       </ul>
-    </div>
 
-    <div id="projects" class="tabcontent">
-      <h2>Projects</h2>
-      <p><strong>Solar Fast Charger</strong><br>
-      Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.</p>
-
-      <p><strong>Mini Tesla Coil</strong><br>
-      Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.</p>
-
-      <p><strong>Digital Promotion Campaign</strong><br>
-      Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.</p>
-
-      <p><strong>FX Boss – Automated Forex Trading EA</strong><br>
-      Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.</p>
+      <!-- Certifications -->
+      <h3>📜 Certifications</h3>
+      <ul>
+        <li>Google Fundamentals of Digital Marketing – Google</li>
+        <li>Infosys Foundation – Unnatti Sixer (2023)</li>
+        <li>PCB Design by Vi Microsystems</li>
+        <li>Intermediate Microsoft Office – Microsoft Partner</li>
+        <li>National Cyber Olympiad (2016 & 2018)</li>
+        <li>Certificate by USS (Unique Software Solution)</li>
+      </ul>
     </div>
   </div>
 
@@ -226,4 +241,3 @@
   </script>
 </body>
 </html>
-
