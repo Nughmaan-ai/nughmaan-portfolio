@@ -19,26 +19,6 @@
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
-    body.fade-in {
-      animation: fadeInBody 1.2s ease-in;
-    }
-    @keyframes fadeInBody {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    #loader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: #1a1a2e;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      color: white;
-      font-size: 2rem;
-    }
-    .hidden { display: none; }
     .container {
       text-align: center;
       padding: 50px 20px;
@@ -133,9 +113,7 @@
   </style>
 </head>
 <body>
-  <div id="loader">Loading Nughmaan's Portfolio...</div>
-
-  <div class="container hidden" id="main-content">
+  <div class="container" id="main-content">
     <h1>👋 Hi, I’m Nughmaan D.ECE</h1>
     <p class="about-me">
       A driven student and experienced Visa Executive who is passionate about blending travel industry knowledge with technical expertise. With a diploma in Electronics and Communication Engineering and a strong foundation in digital tools, I actively pursue growth in technology, entrepreneurship, and cross-border collaboration.
@@ -148,8 +126,6 @@
       <button class="tablink" onclick="openTab(event, 'skills')">Skills & Certificates</button>
       <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
     </nav>
-
-    <!-- Tab content continues below unchanged -->
   </div>
 
   <script>
@@ -167,16 +143,9 @@
       evt.currentTarget.className += " active";
     }
 
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loader").classList.add("hidden");
-        const content = document.getElementById("main-content");
-        content.classList.remove("hidden");
-        content.classList.add("fade-in");
-        document.querySelector(".tablink").click();
-      }, 1500);
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".tablink").click();
     });
   </script>
 </body>
 </html>
-
