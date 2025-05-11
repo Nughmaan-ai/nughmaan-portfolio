@@ -1,21 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nughmaan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #320d4d, #1f1c2c);
+      background-size: 400% 400%;
+      animation: bgMove 18s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      flex-direction: column;
+    }
+
+    .dots span {
+      animation: blink 1.5s infinite;
+      font-size: 2rem;
+    }
+
+    .dots span:nth-child(2) { animation-delay: 0.3s; }
+    .dots span:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .container {
+      display: none;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .tablink {
+      background: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .tablink:hover {
+      background: #ddd;
+    }
+
+    .tabcontent {
+      display: none;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 10px;
+      animation: fadeIn 0.8s ease-in-out;
+      text-align: left;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tabcontent h2 {
+      margin-bottom: 15px;
+    }
+
+    .download-btn {
+      background: #007BFF;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 6px;
+      margin: 20px auto;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+      border-top: 1px solid #fff;
+      padding-top: 20px;
+      color: white;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loader">
+  <div>Loading<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+</div>
+
+<div class="container" id="main">
+  <img src="MY PASSPORT SIZE PHOTO.jpeg" alt="Nughmaan" class="profile-pic" />
+  <h1>👋 Hi, I’m <strong>Nughmaan D.ECE</strong></h1>
+  <p>
+    A passionate diploma student in Electronics & Communication Engineering with real-world experience in travel and e-commerce, embracing innovation in business and tech.
+  </p>
+  <a href="my resume.pdf" class="download-btn" download>📄 Download My CV</a>
+
+  <nav>
+    <button class="tablink" onclick="openTab(event, 'experience')">💼 Experience</button>
+    <button class="tablink" onclick="openTab(event, 'education')">🎓 Education</button>
+    <button class="tablink" onclick="openTab(event, 'skills')">🛠️ Skills & Certificates</button>
+    <button class="tablink" onclick="openTab(event, 'projects')">📂 Projects</button>
+    <button class="tablink" onclick="openTab(event, 'contact')">📬 Contact Info</button>
+  </nav>
+
+  <div id="experience" class="tabcontent">
+    <h2>💼 Work Experience</h2>
+    <p><strong>Go My Area Tours & Travels / Bab Al Noor LLC</strong> (2024 – Present)<br>
+    Managed visa processes, booking operations, and client communication. Designed marketing creatives and handled B2B & B2C strategy coordination.</p>
+
+    <p><strong>📍 Business Travel Experience:</strong><br>
+    Dubai (2 months), Saudi Arabia – Dammam, Riyadh, Jeddah (1 week each) for travel business coordination and partnership building.</p>
+
+    <p><strong>Internship – Okinawa EV</strong> (2023)<br>
+    Hands-on experience in electric vehicle components and systems integration with embedded controllers.</p>
+
+    <p><strong>Entrepreneur – Watch Trading</strong> (2022 – Present)<br>
+    Founded a niche e-commerce watch store for vintage and trending models. Managed logistics, sourcing, and digital marketing campaigns.</p>
+  </div>
+
+  <div id="education" class="tabcontent">
+    <h2>🎓 Education</h2>
+    <ul>
+      <li>Google Fundamentals of Digital Marketing – Google (2025)</li>
+      <li>Diploma in ECE – Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
+    </ul>
+  </div>
+
+  <div id="skills" class="tabcontent">
+    <h2>🛠️ Skills & Certifications</h2>
+    <ul>
+      <li><strong>Technical Skills:</strong></li>
+      <ul>
+        <li>MS Office</li>
+        <li>HTML</li>
+        <li>Flash Multimedia</li>
+        <li>FrontPage</li>
+        <li>C Programming</li>
+        <li>Canva</li>
+        <li>Foxit</li>
+        <li>Marg ERP</li>
+        <li>PCB Design</li>
+      </ul>
+      <li><strong>Soft Skills:</strong></li>
+      <ul>
+        <li>Leadership</li>
+        <li>Creativity</li>
+        <li>Critical Thinking</li>
+        <li>Time Management</li>
+        <li>Teamwork</li>
+      </ul>
+      <li><strong>Certificates:</strong></li>
+      <ul>
+        <li>Google Digital Garage – Fundamentals of Digital Marketing</li>
+        <li>Infosys Foundation – Unnatti Sixer</li>
+        <li>PCB Design by Vi Microsystems</li>
+        <li>Intermediate Microsoft Office</li>
+        <li>National Cyber Olympiad (2016, 2018)</li>
+        <li>Certified by USS (Unique Software Solution)</li>
+      </ul>
+    </ul>
+  </div>
+
+  <div id="projects" class="tabcontent">
+    <h2>📂 Projects</h2>
+    <p><strong>Solar Fast Charger</strong><br>
+    A fast, sustainable solar-powered charger built for remote energy access.</p>
+
+    <p><strong>Mini Tesla Coil</strong><br>
+    Low-voltage demonstration project showcasing high-frequency EM theory.</p>
+
+    <p><strong>Digital Promotion Campaign</strong><br>
+    Built marketing material for GoMyArea.com using Canva & ERP tools.</p>
+
+    <p><strong>FX Boss – Automated Forex Trading EA</strong><br>
+    Developed in MQL5, this EA uses Smart Money Concepts for Forex automation.</p>
+  </div>
+
+  <div id="contact" class="tabcontent">
+    <h2>📬 Contact Info</h2>
+    <p><strong>Email:</strong> nughmaandece@gmail.com</p>
+    <p><strong>Phone:</strong> +91 7598004283</p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/17nuxo" style="color: white;">@17nuxo</a></p>
+    <p><strong>Country:</strong> India</p>
+  </div>
+</div>
+
 <script>
   function openTab(evt, tabName) {
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-
-    const tablinks = document.getElementsByClassName("tablink");
-    for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
+    const tabs = document.querySelectorAll('.tabcontent');
+    tabs.forEach(tab => tab.style.display = "none");
 
     document.getElementById(tabName).style.display = "block";
+
+    const tablinks = document.querySelectorAll('.tablink');
+    tablinks.forEach(btn => btn.classList.remove("active"));
     evt.currentTarget.classList.add("active");
   }
 
-  // Open the first tab (Experience) by default
-  window.onload = function () {
-    document.querySelectorAll(".tablink")[0].click();
-  };
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.querySelector(".container").style.display = "block";
+      document.querySelector(".tablink").click(); // Open first tab
+    }, 1500); // 1.5s loader
+  });
 </script>
+
+</body>
+</html>
