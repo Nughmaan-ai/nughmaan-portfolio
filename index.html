@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nughmaan Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     * {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+
     body {
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #320d4d, #1f1c2c);
       background-size: 400% 400%;
       animation: rgbDarkClean 18s ease infinite;
       color: #fff;
     }
+
     @keyframes rgbDarkClean {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    .loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader span {
+      width: 20px;
+      height: 20px;
+      margin: 5px;
+      background: #fff;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-20px);
+        background: #007BFF;
+      }
+    }
+
     .container {
       text-align: center;
       padding: 50px 20px;
     }
+
     .profile-pic {
       width: 150px;
       height: 150px;
@@ -35,10 +73,12 @@
       border: 4px solid #fff;
       margin-bottom: 20px;
     }
+
     h1 {
       font-size: 2.5rem;
       color: #fff;
     }
+
     p.intro, .about-me {
       font-size: 1.2rem;
       margin: 20px auto;
@@ -46,26 +86,32 @@
       color: #eee;
       line-height: 1.8;
     }
+
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 15px;
       margin-top: 30px;
     }
+
     button.tablink {
       background: #fff;
       color: #000;
       border: none;
-      padding: 15px 30px;
+      padding: 12px 25px;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 8px;
       transition: background 0.3s ease;
     }
-    button.tablink:hover {
-      background: #ccc;
+
+    button.tablink:hover,
+    button.tablink.active {
+      background: #007BFF;
+      color: #fff;
     }
+
     .tabcontent {
       display: none;
       padding: 40px 30px;
@@ -78,10 +124,12 @@
       line-height: 1.8;
       color: #fff;
     }
+
     @keyframes fadeEffect {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .download-btn {
       margin-top: 20px;
       padding: 12px 25px;
@@ -94,16 +142,20 @@
       text-decoration: none;
       display: inline-block;
     }
+
     .download-btn:hover {
       background: #0056b3;
     }
+
     ul {
       padding-left: 20px;
     }
+
     ul li {
       margin-bottom: 10px;
-      line-height: 1.8;
+      font-size: 1.1rem;
     }
+
     h2 {
       font-size: 2rem;
       background-color: rgba(255, 255, 255, 0.1);
@@ -112,132 +164,115 @@
       margin-top: 20px;
       color: #fff;
     }
-    .highlight {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .tabcontent p + p {
-      margin-top: 20px;
-    }
-    .tabcontent ul + ul {
-      margin-top: 20px;
-    }
-    .tabcontent p strong {
-      font-size: 1.5rem;
-      display: block;
-      margin-top: 15px;
-    }
-
-    /* Custom Styling for Skills and Certificates */
-    .skills-certificate-section {
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .skills-certificate-section h2 {
-      font-size: 2rem;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .skills-certificate-section ul {
-      list-style-type: none;
-      padding-left: 0;
-      text-align: left;
-    }
-    .skills-certificate-section li {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      line-height: 1.8;
-    }
-    .skills-certificate-section li:before {
-      content: "✔️";
-      margin-right: 10px;
-    }
   </style>
 </head>
 <body>
-  <div class="container" id="main-content">
-    <img src="MY PASSPORT SIZE PHOTO.jpeg" alt="Nughmaan" class="profile-pic">
+  <div class="loader" id="loader">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="container" id="main-content" style="display:none;">
+    <img src="MY PASSPORT SIZE PHOTO.jpeg" alt="Nughmaan" class="profile-pic" />
     <h1>👋 Hi, I’m Nughmaan D.ECE</h1>
     <p class="about-me">
-      A driven student and experienced Visa Executive who is passionate about blending travel industry knowledge with technical expertise. With a diploma in Electronics and Communication Engineering and a strong foundation in digital tools, I actively pursue growth in technology, entrepreneurship, and cross-border collaboration.
+      🚀 A driven student and experienced Visa Executive blending travel expertise with technical skills. With a diploma in Electronics and Communication Engineering and certifications in digital tools, I aim to innovate across industries through tech, entrepreneurship, and global collaboration.
     </p>
-    <a href="my resume.pdf" download class="download-btn">Download My CV</a>
+
+    <a href="my resume.pdf" download class="download-btn">📄 Download My CV</a>
 
     <nav>
-      <button class="tablink" onclick="openTab(event, 'experience')">Experience</button>
-      <button class="tablink" onclick="openTab(event, 'education')">Education</button>
-      <button class="tablink" onclick="openTab(event, 'skills')">Skills & Certificates</button>
-      <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
+      <button class="tablink" onclick="openTab(event, 'experience')">💼 Experience</button>
+      <button class="tablink" onclick="openTab(event, 'education')">🎓 Education</button>
+      <button class="tablink" onclick="openTab(event, 'skills')">🛠 Skills & Certificates</button>
+      <button class="tablink" onclick="openTab(event, 'projects')">💡 Projects</button>
+      <button class="tablink" onclick="openTab(event, 'contact')">📞 Contact</button>
     </nav>
 
-    <div id="skills" class="tabcontent skills-certificate-section">
-      <h2>🛠️ Skills & Certifications</h2>
+    <div id="experience" class="tabcontent">
+      <h2>💼 Work Experience</h2>
+      <p><strong>Visa & Ticketing Executive</strong><br/>
+        ✈️ Managed tourist visa processes, customer service, and content creation for travel package marketing. Conducted international coordination in UAE and Saudi Arabia.
+      </p>
+      <p><strong>Internship – Okinawa Electric Vehicles</strong><br/>
+        ⚡ Trained in EV tech including battery modules, controllers, and vehicle testing.
+      </p>
+      <p><strong>Entrepreneur – Watch Trading</strong><br/>
+        ⌚ Curated and sold luxury watches online. Specialized in sourcing rare pieces and customer service.
+      </p>
+    </div>
 
-      <!-- Technical Skills -->
-      <h3>💻 Technical Skills</h3>
+    <div id="education" class="tabcontent">
+      <h2>🎓 Education</h2>
       <ul>
-        <li>MS Office</li>
-        <li>HTML</li>
-        <li>Flash Multimedia</li>
-        <li>FrontPage</li>
-        <li>C Programming</li>
-        <li>Canva</li>
-        <li>Ninthware</li>
-        <li>Foxit</li>
-        <li>Marg ERP</li>
-        <li>PCB Design</li>
+        <li><strong>📘 Google Fundamentals of Digital Marketing</strong> – Google Digital Garage (2025)</li>
+        <li><strong>🏫 Diploma in ECE</strong> – Valivalam Desikar Polytechnic College (2021–2024)</li>
       </ul>
+    </div>
 
-      <!-- Soft Skills -->
-      <h3>🤝 Soft Skills</h3>
+    <div id="skills" class="tabcontent">
+      <h2>🛠 Skills & Certifications</h2>
       <ul>
-        <li>Leadership</li>
-        <li>Creativity</li>
-        <li>Critical Thinking</li>
-        <li>Multi-tasking</li>
-        <li>Time Management</li>
-        <li>Problem Solving</li>
-        <li>Teamwork</li>
+        <li><strong>💻 Technical Skills:</strong></li>
+        <ul>
+          <li>MS Office (Certified by USS)</li>
+          <li>HTML & FrontPage (USS)</li>
+          <li>Flash Multimedia (USS)</li>
+          <li>C Programming</li>
+          <li>PCB Design</li>
+          <li>Canva, Ninthware, Foxit, Marg ERP</li>
+        </ul>
+        <li><strong>🤝 Soft Skills:</strong></li>
+        <ul>
+          <li>Leadership, Creativity</li>
+          <li>Critical Thinking, Time Management</li>
+          <li>Problem Solving, Teamwork</li>
+        </ul>
+        <li><strong>📜 Certifications:</strong></li>
+        <ul>
+          <li>Google Digital Garage – Digital Marketing</li>
+          <li>Infosys Unnatti Sixer (2023)</li>
+          <li>PCB Design – Vi Microsystems</li>
+          <li>Intermediate Microsoft Office</li>
+          <li>National Cyber Olympiad (2016 & 2018)</li>
+          <li>Unique Software Solution (USS)</li>
+        </ul>
       </ul>
+    </div>
 
-      <!-- Certifications -->
-      <h3>📜 Certifications</h3>
+    <div id="projects" class="tabcontent">
+      <h2>💡 Projects</h2>
+      <p><strong>🔋 Solar Fast Charger</strong><br/>
+      Designed a renewable energy-based charger for remote areas.</p>
+
+      <p><strong>⚡ Mini Tesla Coil</strong><br/>
+      Built a safe demo Tesla coil to teach electromagnetic concepts.</p>
+
+      <p><strong>📣 Digital Campaign</strong><br/>
+      Created promotional designs for GoMyArea.com to improve reach.</p>
+
+      <p><strong>🤖 FX Boss – Forex EA</strong><br/>
+      Developed an MQL5 Expert Advisor using SMC + ICT for automated trading.</p>
+    </div>
+
+    <div id="contact" class="tabcontent">
+      <h2>📞 Contact</h2>
       <ul>
-        <li>Google Fundamentals of Digital Marketing – Google</li>
-        <li>Infosys Foundation – Unnatti Sixer (2023)</li>
-        <li>PCB Design by Vi Microsystems</li>
-        <li>Intermediate Microsoft Office – Microsoft Partner</li>
-        <li>National Cyber Olympiad (2016 & 2018)</li>
-        <li>Certificate by USS (Unique Software Solution)</li>
+        <li><strong>📧 Email:</strong> <a href="mailto:nughmaandece@gmail.com">nughmaandece@gmail.com</a></li>
+        <li><strong>📱 Phone:</strong> +91 75980 04283</li>
+        <li><strong>🌍 Location:</strong> India</li>
       </ul>
     </div>
   </div>
 
   <script>
     function openTab(evt, tabName) {
-      const tabcontent = document.getElementsByClassName("tabcontent");
-      for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+      const tabs = document.getElementsByClassName("tabcontent");
+      for (let tab of tabs) {
+        tab.style.display = "none";
       }
-      const tablinks = document.getElementsByClassName("tablink");
-      for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
+      const buttons = document.getElementsByClassName("tablink");
+      for (let btn of buttons) {
+        btn.classList.remove("active");
       }
       document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.classList.add("active");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelector(".tablink").click();
-    });
-  </script>
-</body>
-</html>
+      evt.currentTarget.classList.add
