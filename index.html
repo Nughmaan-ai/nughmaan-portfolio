@@ -57,7 +57,7 @@
       padding: 40px 30px;
       animation: fadeEffect 0.8s;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 30px auto;
       text-align: left;
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
@@ -83,6 +83,16 @@
     }
     ul { padding-left: 20px; }
     ul li { margin-bottom: 10px; line-height: 1.6; }
+    h2 {
+      font-size: 2rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+    strong.google {
+      font-weight: 800;
+      color: #fbbc05;
+    }
   </style>
 </head>
 <body>
@@ -128,22 +138,38 @@
       <h2>Education</h2>
       <ul>
         <li><strong>Diploma in Electronics & Communication Engineering</strong><br>Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
-        <li><strong>Google Fundamentals of Digital Marketing</strong><br>Google Digital Garage (2025)</li>
+        <li><strong class="google">Google Fundamentals of Digital Marketing</strong><br>Google Digital Garage (2025)</li>
       </ul>
     </div>
 
     <div id="skills" class="tabcontent">
       <h2>Skills & Certifications</h2>
       <ul>
-        <li><strong>Technical Skills:</strong><br>HTML, C++, Microsoft Office, FrontPage, PCB Design, Foxit, Ninthware, Canva, Marg ERP</li>
-        <li><strong>Soft Skills:</strong><br>Leadership, Creativity, Critical Thinking, Multi-tasking</li>
+        <li><strong>Technical Skills:</strong>
+          <ul>
+            <li>MS Office – Intermediate Level (2016)</li>
+            <li>HTML & Flash Multimedia (2017)</li>
+            <li>Microsoft FrontPage (2018)</li>
+            <li>Programming in C (2019–2020)</li>
+            <li>PCB Design</li>
+            <li>Foxit, Ninthware, Canva, Marg ERP</li>
+          </ul>
+        </li>
+        <li><strong>Soft Skills:</strong>
+          <ul>
+            <li>Leadership</li>
+            <li>Creativity</li>
+            <li>Critical Thinking</li>
+            <li>Multi-tasking</li>
+          </ul>
+        </li>
         <li><strong>Certifications:</strong>
           <ul>
             <li>Infosys Foundation – Unnatti Sixer (2023)</li>
             <li>PCB Design by Vi Microsystems</li>
             <li>Intermediate Microsoft Office – Microsoft Partner</li>
             <li>National Cyber Olympiad (2016 & 2018)</li>
-            <li>Google Fundamentals of Digital Marketing (2025)</li>
+            <li><strong class="google">Google Fundamentals of Digital Marketing (2025)</strong></li>
           </ul>
         </li>
       </ul>
@@ -173,11 +199,11 @@
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    // Auto show the first tab by default
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelector(".tablink").click();
     });
   </script>
 </body>
 </html>
+
 
