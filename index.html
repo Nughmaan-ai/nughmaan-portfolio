@@ -61,6 +61,7 @@
       text-align: left;
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
+      line-height: 1.8;
     }
     @keyframes fadeEffect {
       from {opacity: 0;}
@@ -82,16 +83,19 @@
       background: #e64a19;
     }
     ul { padding-left: 20px; }
-    ul li { margin-bottom: 10px; line-height: 1.6; }
+    ul li { margin-bottom: 10px; line-height: 1.8; }
     h2 {
       font-size: 2rem;
       background-color: rgba(255, 255, 255, 0.15);
       padding: 10px 15px;
       border-radius: 8px;
     }
-    strong.google {
-      font-weight: 800;
-      color: #fbbc05;
+    .highlight {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 10px;
+      display: block;
     }
   </style>
 </head>
@@ -111,34 +115,37 @@
 
     <div id="experience" class="tabcontent">
       <h2>Work Experience</h2>
-      <p><strong>Visa & Ticketing Executive</strong><br>
-        <em>GoMyArea Travel and Tourism, India & Bab Al Noor LLC, Dubai (2024–2025)</em><br><br>
-        Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.<br><br>
-        <strong>Business Travel Experience:</strong><br>
-        Represented the company in international travel and business coordination efforts:<br>
+
+      <span class="highlight">Visa & Ticketing Executive</span>
+      <p><em>GoMyArea Travel and Tourism, India & Bab Al Noor LLC, Dubai (2024–2025)</em><br><br>
+      Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.
+      </p>
+
+      <span class="highlight">Business Travel Experience</span>
+      <p>Represented the company in international travel and business coordination efforts:<br>
         • Visited <strong>Dubai, UAE</strong> for 2 months for tourism partnership and operations.<br>
         • Traveled to <strong>Saudi Arabia</strong> for field research and network expansion:<br>
-          - <strong>Dammam</strong> – 1 week<br>
-          - <strong>Riyadh</strong> – 1 week<br>
-          - <strong>Jeddah</strong> – 1 week
+        - <strong>Dammam</strong> – 1 week<br>
+        - <strong>Riyadh</strong> – 1 week<br>
+        - <strong>Jeddah</strong> – 1 week
       </p>
 
-      <p><strong>Internship – Okinawa Electric Vehicles</strong><br>
-        <em>Electronics & Communication Engineering Internship</em><br><br>
-        Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.
+      <span class="highlight">Internship – Okinawa Electric Vehicles</span>
+      <p><em>Electronics & Communication Engineering Internship</em><br><br>
+      Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.
       </p>
 
-      <p><strong>Entrepreneur – Watch Trading Business</strong><br>
-        <em>Vintage & Trending Watches | Exotic Watches (2022 – Present)</em><br><br>
-        Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.
+      <span class="highlight">Entrepreneur – Watch Trading Business</span>
+      <p><em>Vintage & Trending Watches | Exotic Watches (2022 – Present)</em><br><br>
+      Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.
       </p>
     </div>
 
     <div id="education" class="tabcontent">
       <h2>Education</h2>
       <ul>
+        <li><strong>Google Fundamentals of Digital Marketing</strong><br>Google Digital Garage (2025)</li>
         <li><strong>Diploma in Electronics & Communication Engineering</strong><br>Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
-        <li><strong class="google">Google Fundamentals of Digital Marketing</strong><br>Google Digital Garage (2025)</li>
       </ul>
     </div>
 
@@ -147,6 +154,7 @@
       <ul>
         <li><strong>Technical Skills:</strong>
           <ul>
+            <li>Google Fundamentals of Digital Marketing (2025)</li>
             <li>MS Office – Intermediate Level (2016)</li>
             <li>HTML & Flash Multimedia (2017)</li>
             <li>Microsoft FrontPage (2018)</li>
@@ -169,7 +177,7 @@
             <li>PCB Design by Vi Microsystems</li>
             <li>Intermediate Microsoft Office – Microsoft Partner</li>
             <li>National Cyber Olympiad (2016 & 2018)</li>
-            <li><strong class="google">Google Fundamentals of Digital Marketing (2025)</strong></li>
+            <li>Google Fundamentals of Digital Marketing (2025)</li>
           </ul>
         </li>
       </ul>
@@ -177,11 +185,17 @@
 
     <div id="projects" class="tabcontent">
       <h2>Projects</h2>
-      <p><strong>Solar Fast Charger</strong> – Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.<br><br>
-        <strong>Mini Tesla Coil</strong> – Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.<br><br>
-        <strong>Digital Promotion Campaign</strong> – Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.<br><br>
-        <strong>FX Boss – Automated Forex Trading EA</strong> – Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.
-      </p>
+      <p><span class="highlight">Solar Fast Charger</span><br>
+      Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.</p>
+
+      <p><span class="highlight">Mini Tesla Coil</span><br>
+      Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.</p>
+
+      <p><span class="highlight">Digital Promotion Campaign</span><br>
+      Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.</p>
+
+      <p><span class="highlight">FX Boss – Automated Forex Trading EA</span><br>
+      Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.</p>
     </div>
   </div>
 
@@ -205,5 +219,3 @@
   </script>
 </body>
 </html>
-
-
