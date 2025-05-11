@@ -69,7 +69,7 @@
     .tabcontent {
       display: none;
       padding: 40px 30px;
-      animation: fadeEffect 0.8s;
+      animation: fadeEffect 1.5s;
       max-width: 900px;
       margin: 30px auto;
       text-align: left;
@@ -179,27 +179,26 @@
     <a href="my resume.pdf" download class="download-btn">Download My CV</a>
 
     <nav>
-      <button class="tablink" onclick="openTab(event, 'experience')">Experience</button>
-      <button class="tablink" onclick="openTab(event, 'education')">Education</button>
-      <button class="tablink" onclick="openTab(event, 'skills')">Skills & Certificates</button>
-      <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
-      <button class="tablink" onclick="openTab(event, 'contact')">Contact Info</button>
+      <button class="tablink" onclick="openTab(event, 'experience')">🛠️ Experience</button>
+      <button class="tablink" onclick="openTab(event, 'education')">🎓 Education</button>
+      <button class="tablink" onclick="openTab(event, 'skills')">🧠 Skills & Certificates</button>
+      <button class="tablink" onclick="openTab(event, 'projects')">📁 Projects</button>
+      <button class="tablink" onclick="openTab(event, 'contact')">📞 Contact Info</button>
     </nav>
 
     <div id="experience" class="tabcontent">
       <h2>Work Experience</h2>
-      <p><strong>Visa & Ticketing Executive</strong><br>
-      Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.<br><br>
-      <strong>Business Travel Experience:</strong> Visited Dubai, UAE (2 months), and Saudi Arabia: Dammam, Riyadh, Jeddah (1 week each) for business coordination and partnership development.
-      </p>
+      <p><strong>Go My Area Tours and Travels</strong> (2024 - Present)<br>
+      As a Visa Executive, I am responsible for coordinating visa applications, ensuring compliance with travel regulations, and providing excellent customer service to our clients. In addition, I contribute to content marketing strategies and promotional campaigns.</p>
 
-      <p><strong>Internship – Okinawa Electric Vehicles</strong><br>
-      Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.
-      </p>
+      <p><strong>Bab Al Noor LLC</strong> (2024 - Present)<br>
+      Working with a dedicated team in the travel and tourism sector, I am involved in handling corporate travel requests, providing personalized services, and assisting in administrative tasks related to international travel bookings.</p>
 
-      <p><strong>Entrepreneur – Watch Trading Business</strong><br>
-      Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.
-      </p>
+      <p><strong>Internship – Okinawa Electric Vehicles</strong> (2023)<br>
+      Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.</p>
+
+      <p><strong>Watch Trading Business</strong> (2022 - Present)<br>
+      Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.</p>
     </div>
 
     <div id="education" class="tabcontent">
@@ -265,42 +264,38 @@
       Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.</p>
 
       <p><strong>FX Boss – Automated Forex Trading EA</strong><br>
-      Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.</p>
+      Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on market analysis, with stop loss, risk management, and trade management features.</p>
     </div>
 
     <div id="contact" class="tabcontent">
       <h2>Contact Info</h2>
+      <p class="highlight">📧 Email: <a href="mailto:nughmaandece@gmail.com">nughmaandece@gmail.com</a></p>
+      <p class="highlight">📱 Indian Phone: <a href="tel:+917598004283">+91 7598004283</a></p>
+      <p class="highlight">📱 UAE Phone: <a href="tel:+971586227740">+971 58 622 7740</a></p>
+      <p class="highlight">📷 Instagram: <a href="https://instagram.com/17nuxo" target="_blank">@17nuxo</a></p>
       <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
-      <p>Contact details will be displayed after loading...</p>
     </div>
   </div>
 
   <script>
     function openTab(evt, tabName) {
-      const tabcontent = document.getElementsByClassName("tabcontent");
-      for (let i = 0; i < tabcontent.length; i++) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
-      const tablinks = document.getElementsByClassName("tablink");
-      for (let i = 0; i < tablinks.length; i++) {
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("active");
       }
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.classList.add("active");
     }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelector(".tablink").click();
-      setTimeout(() => {
-        document.querySelector("#contact .loader").style.display = "none";
-        document.querySelector("#contact p").textContent = "You can contact me at: nughmaanfx@gmail.com or call +91 75980 04283.";
-      }, 2000);
-    });
+    document.getElementsByClassName("tablink")[0].click();
   </script>
 </body>
 </html>
-
