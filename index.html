@@ -12,29 +12,15 @@
       background-size: 400% 400%;
       animation: gradientFlow 15s ease infinite;
       color: white;
-      position: relative;
     }
     @keyframes gradientFlow {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
-    body::after {
-      content: "";
-      position: absolute;
-      top: 40px;
-      right: 40px;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle at center, #fff 20%, transparent 70%);
-      border-radius: 50%;
-      box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.1);
-    }
     .container {
       text-align: center;
       padding: 50px 20px;
-      position: relative;
-      z-index: 2;
     }
     .profile-pic {
       width: 150px;
@@ -69,10 +55,12 @@
     .tabcontent {
       display: none;
       padding: 40px 30px;
-      animation: fadeEffect  0.8s;
+      animation: fadeEffect 0.8s;
       max-width: 900px;
       margin: 0 auto;
       text-align: left;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
     }
     @keyframes fadeEffect {
       from {opacity: 0;}
@@ -114,7 +102,7 @@
     <div id="experience" class="tabcontent">
       <h2>Work Experience</h2>
       <p><strong>Visa & Ticketing Executive</strong><br>
-        <em>GoMyArea Travel and Tourism, India & Bab Al Noor LLC, Dubai (2024–prsent)</em><br><br>
+        <em>GoMyArea Travel and Tourism, India & Bab Al Noor LLC, Dubai (2024–2025)</em><br><br>
         Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.<br><br>
         <strong>Business Travel Experience:</strong><br>
         Represented the company in international travel and business coordination efforts:<br>
@@ -136,7 +124,40 @@
       </p>
     </div>
 
-    <!-- other content sections remain unchanged -->
+    <div id="education" class="tabcontent">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Diploma in Electronics & Communication Engineering</strong><br>Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
+        <li><strong>Google Fundamentals of Digital Marketing</strong><br>Google Digital Garage (2025)</li>
+      </ul>
+    </div>
+
+    <div id="skills" class="tabcontent">
+      <h2>Skills & Certifications</h2>
+      <ul>
+        <li><strong>Technical Skills:</strong><br>HTML, C++, Microsoft Office, FrontPage, PCB Design, Foxit, Ninthware, Canva, Marg ERP</li>
+        <li><strong>Soft Skills:</strong><br>Leadership, Creativity, Critical Thinking, Multi-tasking</li>
+        <li><strong>Certifications:</strong>
+          <ul>
+            <li>Infosys Foundation – Unnatti Sixer (2023)</li>
+            <li>PCB Design by Vi Microsystems</li>
+            <li>Intermediate Microsoft Office – Microsoft Partner</li>
+            <li>National Cyber Olympiad (2016 & 2018)</li>
+            <li>Google Fundamentals of Digital Marketing (2025)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div id="projects" class="tabcontent">
+      <h2>Projects</h2>
+      <p><strong>Solar Fast Charger</strong> – Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.<br><br>
+        <strong>Mini Tesla Coil</strong> – Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.<br><br>
+        <strong>Digital Promotion Campaign</strong> – Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.<br><br>
+        <strong>FX Boss – Automated Forex Trading EA</strong> – Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.
+      </p>
+    </div>
+  </div>
 
   <script>
     function openTab(evt, tabName) {
@@ -152,6 +173,10 @@
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+    // Auto show the first tab by default
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector(".tablink").click();
+    });
   </script>
 </body>
 </html>
