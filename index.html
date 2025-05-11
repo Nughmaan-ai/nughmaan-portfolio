@@ -17,7 +17,6 @@
       background-size: 400% 400%;
       animation: rgbDarkClean 18s ease infinite;
       color: #fff;
-      overflow-x: hidden;
     }
     @keyframes rgbDarkClean {
       0% { background-position: 0% 50%; }
@@ -70,7 +69,7 @@
     .tabcontent {
       display: none;
       padding: 40px 30px;
-      animation: fadeSlideIn 0.8s ease-out;
+      animation: fadeEffect 0.8s;
       max-width: 900px;
       margin: 30px auto;
       text-align: left;
@@ -79,8 +78,8 @@
       line-height: 1.8;
       color: #fff;
     }
-    @keyframes fadeSlideIn {
-      from { opacity: 0; transform: translateY(30px); }
+    @keyframes fadeEffect {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .download-btn {
@@ -131,77 +130,50 @@
       display: block;
       margin-top: 15px;
     }
-    /* Loader */
-    #loader {
+    /* Custom styles for Skills & Certificates */
+    .skills-list li {
+      margin-left: 20px;
+      padding: 5px 0;
+    }
+    .skills-list li::before {
+      content: "🔧";
+      margin-right: 10px;
+    }
+    .certificates-list li {
+      margin-left: 20px;
+      padding: 5px 0;
+    }
+    .certificates-list li::before {
+      content: "📜";
+      margin-right: 10px;
+    }
+    /* Loading Screen */
+    .loading-screen {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       z-index: 9999;
     }
-    .dots-loader {
+    .loading-content {
+      color: #fff;
       font-size: 2rem;
-      display: flex;
-      gap: 10px;
-      font-weight: bold;
-    }
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: #fff;
-      animation: dot-blink 1.2s infinite;
-    }
-    .dot:nth-child(1) {
-      animation-delay: 0s;
-    }
-    .dot:nth-child(2) {
-      animation-delay: 0.3s;
-    }
-    .dot:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-    @keyframes dot-blink {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
-    }
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-    /* Contact Info */
-    .contact-info {
-      color: #fff;
-      font-size: 1.2rem;
-    }
-    .contact-info a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-
-  <!-- Loader -->
-  <div id="loader">
-    <div class="dots-loader">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">Loading...</div>
   </div>
 
-  <!-- Main Content -->
-  <div class="container" id="main-content" style="display: none;">
+  <div class="container" id="main-content">
     <img src="MY PASSPORT SIZE PHOTO.jpeg" alt="Nughmaan" class="profile-pic">
     <h1>👋 Hi, I’m Nughmaan D.ECE</h1>
     <p class="about-me">
@@ -214,96 +186,103 @@
       <button class="tablink" onclick="openTab(event, 'education')">Education</button>
       <button class="tablink" onclick="openTab(event, 'skills')">Skills & Certificates</button>
       <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
-      <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
     </nav>
 
     <div id="experience" class="tabcontent">
       <h2>Work Experience</h2>
-      <p>
-        <strong>Visa Executive</strong> – I have worked in managing the visa process for clients, ensuring all documents were in place for tourist visas and processing timely applications. Additionally, I handled customer service duties for travel-related inquiries, focusing on visa requirements and bookings.<br><br>
-        <strong>Business Travel Experience:</strong> Visited Dubai, UAE (2 months), and Saudi Arabia: Dammam, Riyadh, Jeddah (1 week each) for business coordination and partnership development.<br><br>
-        <strong>Entrepreneurship Experience:</strong> Founder of a small-scale online accessory shop. Managed product sourcing, online marketing, and logistics to generate steady sales through an online platform.
+      <p><strong>Visa & Ticketing Executive</strong><br>
+        Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.<br><br>
+        <strong>Business Travel Experience:</strong> Visited Dubai, UAE (2 months), and Saudi Arabia: Dammam, Riyadh, Jeddah (1 week each) for business coordination and partnership development.
+      </p>
+
+      <p><strong>Internship – Okinawa Electric Vehicles</strong><br>
+        Completed hands-on training and live workshop experience in EV components such as battery modules, controllers, and motor operations. Learned how EV systems are integrated with embedded controllers and participated in live vehicle diagnostics and testing sessions. Gained practical exposure to real-time manufacturing environments and advanced eco-technology.
+      </p>
+
+      <p><strong>Entrepreneur – Watch Trading Business</strong><br>
+        Founded and operate a small-scale e-commerce business selling luxury, vintage, and trending watches. Specialize in sourcing, curating, and selling high-quality timepieces across various platforms and direct clients. Developed marketing strategies using digital platforms, built customer relationships, and handled logistics and after-sales services. Built a growing niche audience by offering rare and limited-edition watch models.
       </p>
     </div>
 
     <div id="education" class="tabcontent">
       <h2>Education</h2>
       <ul>
-        <li><strong>Diploma in Electronics & Communication Engineering</strong> – Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
         <li><strong>Google Fundamentals of Digital Marketing</strong> – Google Digital Garage (2025)</li>
+        <li><strong>Diploma in Electronics & Communication Engineering</strong> – Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</li>
       </ul>
     </div>
 
     <div id="skills" class="tabcontent">
       <h2>Skills & Certifications</h2>
-      <ul>
-        <li><strong>Technical Skills:</strong>
-          <ul>
-            <li>MS Office</li>
-            <li>HTML</li>
-            <li>Flash Multimedia</li>
-            <li>FrontPage</li>
-            <li>C Programming</li>
-            <li>Canva</li>
-            <li>Ninthware</li>
-            <li>Foxit</li>
-            <li>Marg ERP</li>
-            <li>PCB Design</li>
-          </ul>
-        </li>
-        <li><strong>Certifications:</strong>
-          <ul>
-            <li>Google Fundamentals of Digital Marketing</li>
-            <li>Microsoft Certified: Office Specialist</li>
-          </ul>
-        </li>
+      <h3>Technical Skills 🛠️</h3>
+      <ul class="skills-list">
+        <li>MS Office</li>
+        <li>HTML & CSS</li>
+        <li>Flash Multimedia</li>
+        <li>FrontPage</li>
+        <li>C Programming</li>
+        <li>Canva</li>
+        <li>PCB Design</li>
+      </ul>
+
+      <h3>Soft Skills 💡</h3>
+      <ul class="skills-list">
+        <li>Leadership</li>
+        <li>Creativity</li>
+        <li>Critical Thinking</li>
+        <li>Multi-tasking</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+        <li>Teamwork</li>
+      </ul>
+
+      <h3>Certifications 📜</h3>
+      <ul class="certificates-list">
+        <li>Google Fundamentals of Digital Marketing – Google</li>
+        <li>Infosys Foundation – Unnatti Sixer (2023)</li>
+        <li>PCB Design by Vi Microsystems</li>
+        <li>Intermediate Microsoft Office – Microsoft Partner</li>
+        <li>National Cyber Olympiad (2016 & 2018)</li>
+        <li>Certificate by USS (Unique Software Solution)</li>
       </ul>
     </div>
 
     <div id="projects" class="tabcontent">
       <h2>Projects</h2>
-      <p>
-        <strong>Solar Fast Charger</strong><br>
-        Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery.
-      </p>
-    </div>
+      <p><strong>Solar Fast Charger</strong><br>
+        Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.</p>
 
-    <div id="contact" class="tabcontent">
-      <h2>📞 Contact</h2>
-      <div class="contact-info">
-        <ul>
-          <li><strong>📧 Email:</strong> <a href="mailto:nughmaandece@gmail.com">nughmaandece@gmail.com</a></li>
-          <li><strong>📱 Phone:</strong> +91 75980 04283</li>
-          <li><strong>🌍 Location:</strong> India</li>
-          <li><strong>📸 Instagram:</strong> <a href="https://instagram.com/17nuxo" target="_blank">@17nuxo</a></li>
-        </ul>
-      </div>
+      <p><strong>Mini Tesla Coil</strong><br>
+        Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.</p>
+
+      <p><strong>Digital Promotion Campaign</strong><br>
+        Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.</p>
+
+      <p><strong>FX Boss – Automated Forex Trading EA</strong><br>
+        Designed and developed a custom forex trading Expert Advisor (EA) using the ICT (Inner Circle Trader) and Smart Money Concept (SMC) strategy frameworks. This EA, named "FX Boss," autonomously executes trades based on price action, order blocks, and liquidity zones. Developed in MetaEditor using MQL5, it includes risk management, auto lot sizing, and time-based filters for improved accuracy. The project showcases deep technical and strategic understanding of forex markets and algorithmic trading development.</p>
     </div>
   </div>
 
   <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-        document.querySelector(".tablink").click();
-      }, 2000); // 2-second loading screen
-    });
-
     function openTab(evt, tabName) {
-      const tabs = document.getElementsByClassName("tabcontent");
-      for (let tab of tabs) {
-        tab.style.display = "none";
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
       }
-      const buttons = document.getElementsByClassName("tablink");
-      for (let btn of buttons) {
-        btn.classList.remove("active");
+      const tablinks = document.getElementsByClassName("tablink");
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
       }
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.classList.add("active");
     }
-  </script>
 
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".tablink").click();
+      setTimeout(() => {
+        document.getElementById("loadingScreen").style.display = "none";
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
-
