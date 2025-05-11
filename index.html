@@ -8,10 +8,10 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body {
-      background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #53354a);
+      background: linear-gradient(-45deg, #ffffff, #f0f0f0, #eaeaea, #dcdcdc);
       background-size: 400% 400%;
       animation: gradientFlow 15s ease infinite;
-      color: white;
+      color: #222;
     }
     @keyframes gradientFlow {
       0% {background-position: 0% 50%;}
@@ -27,11 +27,11 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #fff;
+      border: 4px solid #444;
       margin-bottom: 20px;
     }
-    h1 { font-size: 2.5rem; }
-    p.intro { font-size: 1.2rem; margin: 20px 0; }
+    h1 { font-size: 2.5rem; color: #111; }
+    p.intro { font-size: 1.2rem; margin: 20px 0; color: #444; }
     nav {
       display: flex;
       justify-content: center;
@@ -40,26 +40,44 @@
       margin-top: 30px;
     }
     button.tablink {
-      background: #0f3460;
-      border: none;
+      background: #ddd;
+      border: 2px solid #bbb;
       padding: 15px 30px;
       font-size: 1rem;
       cursor: pointer;
-      color: white;
+      color: #111;
       border-radius: 8px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
     button.tablink:hover {
-      background: #53354a;
+      background: #ccc;
     }
     .tabcontent {
       display: none;
-      padding: 40px 20px;
+      padding: 40px 30px;
       animation: fadeEffect 0.8s;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
     }
     @keyframes fadeEffect {
       from {opacity: 0;}
       to {opacity: 1;}
+    }
+    .download-btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .download-btn:hover {
+      background: #0056b3;
     }
   </style>
 </head>
@@ -67,7 +85,8 @@
   <div class="container">
     <img src="MY PASSPORT SIZE PHOTO.jpeg" alt="Nughmaan" class="profile-pic">
     <h1>Nughmaan Syed Ali Maricar</h1>
-    <p class="intro">Student & Visa Executive passionate about technology, travel, and innovation.</p>
+    <p class="intro">Student & Visa Executive passionate about technology, travel, and innovation. Committed to bridging the gap between technical skills and real-world applications.</p>
+    <a href="my resume.pdf" download class="download-btn">Download My CV</a>
 
     <nav>
       <button class="tablink" onclick="openTab(event, 'experience')">Experience</button>
@@ -79,28 +98,36 @@
     <div id="experience" class="tabcontent">
       <h2>Work Experience</h2>
       <p><strong>Visa & Ticketing Executive</strong><br>
-        GoMyArea Travel and Tourism, India & Bab Al Noor LLC, Dubai (2024–2025)<br>
-        Handled visa processing, customer support, and digital promotions with a focus on excellence and efficiency.
+        <em>GoMyArea Travel and Tourism, India & Bab Al Noor LLC, Dubai (2024–2025)</em><br><br>
+        Successfully managed end-to-end tourist visa applications, including document verification, application tracking, and customer follow-up. Responded to client queries related to bookings, policy compliance, and rescheduling. Designed promotional creatives and social media content for marketing travel packages, improving outreach and engagement.
       </p>
     </div>
 
     <div id="education" class="tabcontent">
       <h2>Education</h2>
       <p><strong>Diploma in Electronics & Communication Engineering</strong><br>
-        Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)
+        <em>Valivalam Desikar Polytechnic College, Tamil Nadu (2021–2024)</em><br><br>
+        Completed coursework in embedded systems, circuit design, digital communication, and microprocessors. Participated in hands-on labs and live projects including solar charging technology and electromagnetic experiments.
       </p>
     </div>
 
     <div id="skills" class="tabcontent">
       <h2>Skills & Certifications</h2>
-      <p>HTML, C++, Microsoft Office, PCB Design, Leadership, Creativity, Critical Thinking<br>
-        Certifications from Infosys Foundation, Microsoft Partner, Vi Microsystems, etc.
+      <p><strong>Technical Skills:</strong><br>
+        HTML, C++, Microsoft Office, FrontPage, PCB Design<br><br>
+        <strong>Soft Skills:</strong><br>
+        Leadership, Creativity, Critical Thinking, Multi-tasking<br><br>
+        <strong>Certifications:</strong><br>
+        Infosys Foundation – Unnatti Sixer (2023), PCB Design by Vi Microsystems, Intermediate Microsoft Office (Microsoft Partner), National Cyber Olympiad (2016 & 2018)
       </p>
     </div>
 
     <div id="projects" class="tabcontent">
       <h2>Projects</h2>
-      <p>Solar Fast Charger, Mini Tesla Coil, Digital Promotion Campaign for GoMyArea.com</p>
+      <p><strong>Solar Fast Charger</strong> – Designed a high-efficiency solar-powered charging system for fast, sustainable energy delivery. This project emphasized renewable energy use and power management for remote applications.<br><br>
+        <strong>Mini Tesla Coil</strong> – Developed a compact Tesla coil for safe, low-voltage educational demonstrations showcasing principles of high-frequency electromagnetism.<br><br>
+        <strong>Digital Promotion Campaign</strong> – Created marketing assets for GoMyArea.com using tools like Canva and ERP software. These included banners, posters, and digital flyers that boosted campaign awareness by over 25%.
+      </p>
     </div>
   </div>
 
@@ -121,3 +148,4 @@
   </script>
 </body>
 </html>
+
