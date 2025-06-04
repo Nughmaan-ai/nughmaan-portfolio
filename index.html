@@ -2,47 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nughmaan Syed Ali Maricar - Portfolio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      background: #0f0f0f;
       color: #e0e0e0;
       line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
     }
-    /* Loader */
+
+    /* Canvas fills entire background */
+    #background-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -1;
+      background: #0f0f0f;
+    }
+
     #loader {
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background: #121212;
+      background: #111;
+      color: #ffa500;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
-      flex-direction: column;
-      color: #ff9800;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 2px;
-    }
-    /* Spinner animation */
-    #loader .spinner {
-      border: 5px solid #333;
-      border-top: 5px solid #ff9800;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1.2s linear infinite;
-      margin-bottom: 1rem;
-    }
-    @keyframes spin {
-      0% {transform: rotate(0deg);}
-      100% {transform: rotate(360deg);}
+      font-family: 'Roboto', sans-serif;
+      z-index: 1000;
+      user-select: none;
     }
 
     header {
@@ -50,7 +51,9 @@
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      user-select: none;
     }
+
     .profile-photo {
       width: 150px;
       height: 150px;
@@ -60,13 +63,16 @@
       object-fit: cover;
       border: 4px solid #444;
     }
+
     .boxes {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
       padding: 2rem 1rem;
+      user-select: none;
     }
+
     .box {
       background: #1e1e1e;
       color: white;
@@ -75,32 +81,30 @@
       width: 150px;
       text-align: center;
       cursor: pointer;
+      transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      /* Animation */
-      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-      animation: pulseIn 0.8s ease forwards;
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    /* Staggered pulseIn animation */
-    .box:nth-child(1) { animation-delay: 0.1s; }
-    .box:nth-child(2) { animation-delay: 0.2s; }
-    .box:nth-child(3) { animation-delay: 0.3s; }
-    .box:nth-child(4) { animation-delay: 0.4s; }
-    .box:nth-child(5) { animation-delay: 0.5s; }
-
-    @keyframes pulseIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      border: 2px solid transparent;
+      user-select: none;
     }
 
     .box:hover {
-      transform: scale(1.1);
-      background: #ff9800;
-      color: #121212;
-      box-shadow: 0 8px 20px rgba(255, 152, 0, 0.7);
+      transform: scale(1.05);
+      background: #333;
+    }
+
+    /* Active box style on click: orange -> white with smooth transition */
+    .box.active {
+      background-color: #ff9800;
+      color: white;
+      border-color: #ff9800;
+      transition: background-color 0.7s ease, color 0.7s ease, border-color 0.7s ease;
+    }
+
+    .box.active.transition-to-white {
+      background-color: white !important;
+      color: #ff9800 !important;
+      border-color: white !important;
+      transition: background-color 1s ease, color 1s ease, border-color 1s ease;
     }
 
     .section {
@@ -110,15 +114,19 @@
       padding: 1rem;
       background: #222;
       border-radius: 10px;
+      user-select: text;
     }
-    .active {
+
+    .active-section {
       display: block;
     }
+
     h2 {
       border-bottom: 2px solid #444;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
+
     .download-btn {
       background: #ff9800;
       color: white;
@@ -128,21 +136,23 @@
       margin-top: 1rem;
       text-decoration: none;
       display: inline-block;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s ease;
     }
+
     .download-btn:hover {
-      background: #e07b00;
+      background: #ffa733;
     }
+
     p {
       margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <div id="loader">
-    <div class="spinner"></div>
-    Loading... Please wait
-  </div>
+
+  <canvas id="background-canvas"></canvas>
+
+  <div id="loader">Loading... Please wait</div>
 
   <header style="display:none;">
     <img src="my-photo.jpg" alt="Profile Photo" class="profile-photo" />
@@ -152,11 +162,11 @@
   </header>
 
   <div class="boxes" style="display:none;">
-    <div class="box" onclick="showSection('experience')">Experience</div>
-    <div class="box" onclick="showSection('education')">Education</div>
-    <div class="box" onclick="showSection('projects')">Projects</div>
-    <div class="box" onclick="showSection('skills')">Skills</div>
-    <div class="box" onclick="showSection('contact')">Contact</div>
+    <div class="box" onclick="showSection('experience', this)">Experience</div>
+    <div class="box" onclick="showSection('education', this)">Education</div>
+    <div class="box" onclick="showSection('projects', this)">Projects</div>
+    <div class="box" onclick="showSection('skills', this)">Skills</div>
+    <div class="box" onclick="showSection('contact', this)">Contact</div>
   </div>
 
   <div id="experience" class="section">
@@ -187,37 +197,123 @@
   <div id="skills" class="section">
     <h2>Skills & Certificates</h2>
     <p><strong>Skills:</strong> Leadership, Multitasking, Creativity, Critical Thinking, Canva, Ninthware, MS Office (Intermediate), TradingView, MetaTrader, PCB Design, Marg ERP, Foxit Reader</p>
-    <p><strong>Certificates:</strong>
-    <br>Google Fundamentals of Digital Marketing (2025)
-    <br>UNNATI English Communication & Life Skills (Infosys, 2023)
-    <br>PCB Design under Tamil Nadu Nan Muthalvan Scheme (2024)
-    <br>MS Office Intermediate by Microsoft
-    <br>HTML, C Programming, Flash Media by Uniq Software Solutions
-    <br>National Cyber Olympiad Certificate (2016, 2018)</p>
+    <p><strong>Certificates:</strong><br>
+      Google Fundamentals of Digital Marketing (2025)<br>
+      UNNATI English Communication & Life Skills (Infosys, 2023)<br>
+      PCB Design under Tamil Nadu Nan Muthalvan Scheme (2024)<br>
+      MS Office Intermediate by Microsoft<br>
+      HTML, C Programming, Flash Media by Uniq Software Solutions<br>
+      National Cyber Olympiad Certificate (2016, 2018)
+    </p>
   </div>
 
   <div id="contact" class="section">
     <h2>Contact</h2>
     <p>Email: your-nughmaandece@gmail.com</p>
     <p>Phone: +91-7598004283</p>
-    <p>LinkedIn: linkedin.com/in/nughmaan s </p>
+    <p>LinkedIn: linkedin.com/in/nughmaan s</p>
   </div>
 
   <script>
-    function showSection(id) {
+    // Show section and handle box active color
+    function showSection(id, clickedBox) {
+      // Hide all sections
       document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
+        section.classList.remove('active-section');
       });
-      document.getElementById(id).classList.add('active');
+      // Show selected section
+      document.getElementById(id).classList.add('active-section');
+
+      // Remove active state from all boxes
+      document.querySelectorAll('.box').forEach(box => {
+        box.classList.remove('active', 'transition-to-white');
+      });
+
+      // Add active class to clicked box
+      clickedBox.classList.add('active');
+
+      // After 1.2 seconds, transition the box background to white with reversed colors
+      setTimeout(() => {
+        clickedBox.classList.add('transition-to-white');
+      }, 1200);
+
+      // Optional: If you want the box to revert after some time (e.g. 3s), uncomment below:
+      /*
+      setTimeout(() => {
+        clickedBox.classList.remove('active', 'transition-to-white');
+      }, 4200);
+      */
     }
 
+    // Loader fade and show main content
     window.onload = function () {
       setTimeout(() => {
         document.getElementById('loader').style.display = 'none';
         document.querySelector('header').style.display = 'block';
         document.querySelector('.boxes').style.display = 'flex';
       }, 1500);
+    };
+
+    // Background canvas particles animation
+    const canvas = document.getElementById('background-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
     }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 1.5 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.alpha = Math.random() * 0.5 + 0.3;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+          this.reset();
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.7)';
+        ctx.shadowBlur = 4;
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const particlesCount = 120;
+    const particles = [];
+    for(let i = 0; i < particlesCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
 </body>
 </html>
