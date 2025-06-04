@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nughmaan S - Portfolio</title>
+  <title>👨‍💻 Nughmaan S - Portfolio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
@@ -78,6 +78,10 @@
     .active {
       display: block;
     }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
     h2 {
       border-bottom: 2px solid #444;
       padding-bottom: 0.5rem;
@@ -104,25 +108,25 @@
 </head>
 <body>
 
-  <div id="loader">Loading... Please wait</div>
+  <div id="loader">⏳ Loading... Please wait</div>
 
   <header style="display:none;">
     <img src="my-photo.jpg" alt="Profile Photo" class="profile-photo" />
-    <h1>Nughmaan Syed Ali Maricar</h1>
-    <p>Experienced Visa Executive | Digital Advisor | Forex & Crypto Strategist | Watch Seller</p>
-    <a class="download-btn" href="my resume.pdf" download>Download CV</a>
+    <h1>👨‍💻 Nughmaan Syed Ali Maricar</h1>
+    <p>🛂 Experienced Visa Executive | 💻 Digital Advisor | 📈 Forex & Crypto Strategist | ⌚ Watch Seller</p>
+    <a class="download-btn" href="my resume.pdf" download>📄 Download CV</a>
   </header>
 
   <div class="boxes" style="display:none;">
-    <div class="box" onclick="showSection('experience')">Experience</div>
-    <div class="box" onclick="showSection('education')">Education</div>
-    <div class="box" onclick="showSection('projects')">Projects</div>
-    <div class="box" onclick="showSection('skills')">Skills</div>
-    <div class="box" onclick="showSection('contact')">Contact</div>
+    <div class="box" onclick="showSection('experience')">💼 Experience</div>
+    <div class="box" onclick="showSection('education')">🎓 Education</div>
+    <div class="box" onclick="showSection('projects')">🛠️ Projects</div>
+    <div class="box" onclick="showSection('skills')">🧠 Skills</div>
+    <div class="box" onclick="showSection('contact')">📞 Contact</div>
   </div>
 
   <div id="experience" class="section">
-    <h2>Experience</h2>
+    <h2>💼 Experience</h2>
     <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>
       Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com). Booked hotels and ensured customer satisfaction.
     </p>
@@ -141,7 +145,7 @@
   </div>
 
   <div id="education" class="section">
-    <h2>Education</h2>
+    <h2>🎓 Education</h2>
     <p>Completed SSLC at Nagore Modern Matric HR Sec School (2020–2021)</p>
     <p>Diploma in Electronics and Communication Engineering (2021–2024)</p>
     <p>Forex Funded Trader Program (2024)</p>
@@ -149,7 +153,7 @@
   </div>
 
   <div id="projects" class="section">
-    <h2>Projects</h2>
+    <h2>🛠️ Projects</h2>
     <p><strong>Solar Fast Charging Station</strong><br>
       Final year project providing renewable energy-based fast charging for electric vehicles.
     </p>
@@ -165,7 +169,7 @@
   </div>
 
   <div id="skills" class="section">
-    <h2>Skills & Certificates</h2>
+    <h2>🧠 Skills & Certificates</h2>
     <p><strong>Skills:</strong> Leadership, Multitasking, Creativity, Critical Thinking, Canva, Ninthware, MS Office (Intermediate), TradingView, MetaTrader, PCB Design, Marg ERP, Foxit Reader</p>
     <p><strong>Certificates:</strong><br>
       Google Fundamentals of Digital Marketing (2025)<br>
@@ -178,31 +182,29 @@
   </div>
 
   <div id="contact" class="section">
-    <h2>Contact</h2>
+    <h2>📞 Contact</h2>
     <p>Email: nughmaandece@gmail.com</p>
-    <p>Phone: +91-7598004283</p>
-    <p>LinkedIn: linkedin.com/in/nughmaan</p>
-    <p>Instagram: 17nuxo</p>
+    <p>Phone: +91 7598004283 | UAE: +971 58 622 7740</p>
   </div>
 
   <script>
-    // Function to show section and hide others
+    // Show loader for 2 seconds then show content
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.querySelector('header').style.display = 'block';
+        document.querySelector('.boxes').style.display = 'flex';
+        showSection('experience'); // default section
+      }, 2000);
+    });
+
     function showSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
+      document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
     }
-
-    // On window load, hide loader and show header + nav
-    window.addEventListener('load', () => {
-      document.getElementById('loader').style.display = 'none';
-      document.querySelector('header').style.display = 'block';
-      document.querySelector('.boxes').style.display = 'flex';
-      // Show default section on load
-      showSection('experience');
-    });
   </script>
+
 </body>
 </html>
