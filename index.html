@@ -1,317 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nughmaan Syed Ali Maricar - Portfolio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nughmaan Syed Ali Maricar - Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-
-  html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: #0f0f0f;
-    color: #e0e0e0;
-    line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  /* Animated radial background with subtle glowing lights */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 50%; left: 50%;
-    width: 200vmax;
-    height: 200vmax;
-    background:
-      radial-gradient(circle at center, #ff9800aa 0%, transparent 40%),
-      radial-gradient(circle at 30% 40%, #ffffff22 0%, transparent 70%),
-      radial-gradient(circle at 70% 70%, #ffffff11 0%, transparent 60%);
-    filter: blur(150px);
-    transform: translate(-50%, -50%);
-    animation: pulseLight 6s ease-in-out infinite alternate;
-    z-index: -2;
-  }
-
-  @keyframes pulseLight {
-    0% {
-      filter: blur(100px);
-      opacity: 0.7;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Roboto', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      height: 100%;
+      overflow-x: hidden;
     }
-    100% {
-      filter: blur(160px);
-      opacity: 1;
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 200vmax;
+      height: 200vmax;
+      background:
+        radial-gradient(circle at center, #ff980055 0%, transparent 40%),
+        radial-gradient(circle at 30% 40%, #ffffff22 0%, transparent 70%),
+        radial-gradient(circle at 70% 70%, #ffffff11 0%, transparent 60%);
+      filter: blur(150px);
+      transform: translate(-50%, -50%);
+      animation: pulseLight 6s ease-in-out infinite alternate;
+      z-index: -1;
     }
-  }
 
-  /* Loading overlay with watch gears animation */
-  #loader {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: #111;
-    color: #ffa500;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    z-index: 1000;
-    user-select: none;
-  }
+    @keyframes pulseLight {
+      0% { filter: blur(100px); opacity: 0.5; }
+      100% { filter: blur(160px); opacity: 1; }
+    }
 
-  /* SVG Gear styles */
-  .gear {
-    fill: none;
-    stroke: #ffa500;
-    stroke-width: 2;
-    stroke-linejoin: round;
-    animation-timing-function: linear;
-  }
+    #loader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      color: #ffa500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 9999;
+    }
 
-  /* Rotations for gears */
-  .gear1 {
-    animation: rotateClockwise 6s linear infinite;
-  }
-  .gear2 {
-    animation: rotateCounter 4s linear infinite;
-  }
-  .gear3 {
-    animation: rotateClockwise 8s linear infinite;
-  }
+    header {
+      background: rgba(20, 20, 20, 0.9);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-  @keyframes rotateClockwise {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-  }
-  @keyframes rotateCounter {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(-360deg);}
-  }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 1rem auto 1.5rem;
+      display: block;
+      object-fit: cover;
+      border: 4px solid #444;
+    }
 
-  header {
-    background: rgba(20, 20, 20, 0.9);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    user-select: none;
-  }
+    .download-btn {
+      background: #ff9800;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
 
-  .profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 1rem auto 1.5rem;
-    display: block;
-    object-fit: cover;
-    border: 4px solid #444;
-    box-shadow: 0 0 15px #ff9800cc;
-  }
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+    }
 
-  .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem 1rem;
-    user-select: none;
-  }
+    .box {
+      background: #1e1e1e;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 150px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      border: 2px solid transparent;
+    }
 
-  .box {
-    background: #1e1e1e;
-    color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    width: 150px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    border: 2px solid transparent;
-    user-select: none;
-  }
+    .box:hover {
+      background: #ff9800;
+      color: white;
+      transform: scale(1.05);
+    }
 
-  .box:hover {
-    transform: scale(1.05);
-    background: #333;
-  }
+    .section {
+      display: none;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #1e1e1e;
+      border-radius: 10px;
+      animation: popup 0.5s ease;
+    }
 
-  /* Pop up animation for content sections */
-  .section {
-    display: none;
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #222;
-    border-radius: 10px;
-    user-select: text;
-    opacity: 0;
-    transform: scale(0.85);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
+    @keyframes popup {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-  .active-section {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
-  }
+    .active { display: block; }
 
-  h2 {
-    border-bottom: 2px solid #444;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
+    h2 {
+      border-bottom: 2px solid #444;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
 
-  .download-btn {
-    background: #ff9800;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-  }
-
-  .download-btn:hover {
-    background: #ffa733;
-  }
-
-  p {
-    margin-bottom: 1rem;
-  }
-</style>
+    p {
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
+  <div id="loader">⌛ Loading portfolio... Please wait</div>
 
-<!-- Loader with watch gears SVG -->
-<div id="loader">
-  <svg width="120" height="120" viewBox="0 0 120 120">
-    <g class="gear gear1" transform="translate(60 60)">
-      <circle r="40" stroke="#ff9800" stroke-width="4" fill="none"/>
-      <g stroke="#ff9800" stroke-width="4" stroke-linecap="round">
-        <line y1="-40" y2="-50" />
-        <line y1="40" y2="50" />
-        <line x1="-40" x2="-50" />
-        <line x1="40" x2="50" />
-        <line x1="28" y1="-28" x2="36" y2="-36" />
-        <line x1="-28" y1="-28" x2="-36" y2="-36" />
-        <line x1="28" y1="28" x2="36" y2="36" />
-        <line x1="-28" y1="28" x2="-36" y2="36" />
-      </g>
-    </g>
-    <g class="gear gear2" transform="translate(30 30)">
-      <circle r="20" stroke="#ff9800" stroke-width="3" fill="none"/>
-      <g stroke="#ff9800" stroke-width="3" stroke-linecap="round">
-        <line y1="-20" y2="-28" />
-        <line y1="20" y2="28" />
-        <line x1="-20" x2="-28" />
-        <line x1="20" x2="28" />
-      </g>
-    </g>
-    <g class="gear gear3" transform="translate(90 90)">
-      <circle r="15" stroke="#ff9800" stroke-width="3" fill="none"/>
-      <g stroke="#ff9800" stroke-width="3" stroke-linecap="round">
-        <line y1="-15" y2="-22" />
-        <line y1="15" y2="22" />
-        <line x1="-15" x2="-22" />
-        <line x1="15" x2="22" />
-      </g>
-    </g>
-  </svg>
-  <div style="margin-top: 20px;">Loading... Please wait</div>
-</div>
+  <header style="display:none;">
+    <img src="my-photo.jpg" alt="Profile Photo" class="profile-photo" />
+    <h1>👋 Nughmaan Syed Ali Maricar</h1>
+    <p>🧾 Visa Executive | 💻 Digital Advisor | 💹 Forex & Crypto Strategist | ⌚ Watch Seller</p>
+    <a class="download-btn" href="my resume.pdf" download>⬇️ Download CV</a>
+  </header>
 
-<header style="display:none;">
-  <img src="my-photo.jpg" alt="Profile Photo" class="profile-photo" />
-  <h1>Nughmaan Syed Ali Maricar</h1>
-  <p>Experienced Visa Executive | Digital Advisor | Forex & Crypto Strategist | Watch Seller</p>
-  <a class="download-btn" href="my resume.pdf" download>Download CV</a>
-</header>
+  <div class="boxes" style="display:none;">
+    <div class="box" onclick="showSection('experience')">💼 Experience</div>
+    <div class="box" onclick="showSection('education')">🎓 Education</div>
+    <div class="box" onclick="showSection('projects')">📁 Projects</div>
+    <div class="box" onclick="showSection('skills')">🛠️ Skills</div>
+    <div class="box" onclick="showSection('contact')">📞 Contact</div>
+  </div>
 
-<div class="boxes" style="display:none;">
-  <div class="box" onclick="showSection('experience', this)">Experience</div>
-  <div class="box" onclick="showSection('education', this)">Education</div>
-  <div class="box" onclick="showSection('projects', this)">Projects</div>
-  <div class="box" onclick="showSection('skills', this)">Skills</div>
-  <div class="box" onclick="showSection('contact', this)">Contact</div>
-</div>
+  <div id="experience" class="section">
+    <h2>💼 Experience</h2>
+    <p><strong>✈️ Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com).</p>
+    <p><strong>🛍️ Nisma Emporium (2021 - Present)</strong><br>Part-time Cashier and Accountant. Introduced new tools and digital systems to improve workflow.</p>
+    <p><strong>📊 Forex / Crypto Trading (2022 - Present)</strong><br>Developed high win-rate strategies, managed risk, and created crypto investment plans.</p>
+    <p><strong>⌚ Watch Selling (2021 - Present)</strong><br>Sold premium vintage and casual watches, offering trusted service and customer care.</p>
+    <p><strong>🔋 Internship at Okinawa EV (2023)</strong><br>Participated in electric vehicle training, learned battery and motor systems.</p>
+  </div>
 
-<div id="experience" class="section">
-  <h2>Experience</h2>
-  <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com). Booked hotels and ensured customer satisfaction.</p>
-  <p><strong>Nisma Emporium (2021 - Present)</strong><br>Part-time Cashier and Accountant. Introduced new tools and advised on digital hardware/software upgrades. Improved workflow with digital systems.</p>
-  <p><strong>Forex / Crypto Trading (2022 - Present)</strong><br>Developed high win-rate strategies, managed risk, modified expert advisors, and created sound investment plans in crypto assets.</p>
-  <p><strong>Watch Selling (2021 - Present)</strong><br>Sold high-quality vintage and casual watches with personalized customer service. Built a loyal customer base through trust and product quality.</p>
-  <p><strong>Internship at Okinawa EV (2023)</strong><br>Participated in EV technology training, learned battery tech, motors, and green solutions for smart transportation.</p>
-</div>
+  <div id="education" class="section">
+    <h2>🎓 Education</h2>
+    <p>📘 Diploma in Electronics and Communication Engineering - Valivalam Desikar Polytechnic College, Nagapattinam</p>
+    <p>🎓 SSLC - Government High School, Karaikal</p>
+  </div>
 
-<div id="education" class="section">
-  <h2>Education</h2>
-  <p>Completed SSLC at Nagore Modern Matric HR Sec School (2020–2021)</p>
-  <p>Diploma in Electronics and Communication Engineering (2021–2024)</p>
-  <p>Completed Forex Funded Trader Program (2024)</p>
-  <p>Google Fundamentals of Digital Marketing Certificate (2025)</p>
-</div>
+  <div id="projects" class="section">
+    <h2>📁 Projects</h2>
+    <p>⚙️ Built travel management modules for B2C customers.</p>
+    <p>🧠 Created automated EA scripts for crypto & forex using MQL5.</p>
+  </div>
 
-<div id="projects" class="section">
-  <h2>Projects</h2>
-  <p><strong>Solar Fast Charging Station</strong><br>Final year project providing renewable energy-based fast charging for electric vehicles.</p>
-  <p><strong>Mini Tesla Coil</strong><br>Science exhibition model to demonstrate wireless electricity and magnetic field effects.</p>
-</div>
+  <div id="skills" class="section">
+    <h2>🛠️ Skills</h2>
+    <p>💼 Visa Processing | 💹 Trading Analysis | 💻 Website Handling | 🛒 E-commerce Selling | 🤝 Customer Support</p>
+  </div>
 
-<div id="skills" class="section">
-  <h2>Skills</h2>
-  <p>Visa Processing, Ticketing Software (Ninthware), Forex & Crypto Strategy, Watch Trading, Customer Relationship Management, Digital Marketing, MS Office, HTML, PCB Design.</p>
-</div>
-
-<div id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:nughmaanfx@gmail.com" style="color:#ff9800;">nughmaanfx@gmail.com</a></p>
-  <p>Phone (UAE): +971 58 622 7740</p>
-  <p>Phone (India): +91 75980 04283</p>
-</div>
-
-<script>
-  // Simulate loading then show content
-  window.onload = () => {
-    setTimeout(() => {
-      document.getElementById('loader').style.display = 'none';
-      document.querySelector('header').style.display = 'block';
-      document.querySelector('.boxes').style.display = 'flex';
-    }, 3000); // 3 seconds loading for demo
-  };
-
-  // Show content section and pop-up animation
-  function showSection(id, clickedBox) {
-    // Remove active from all boxes
-    document.querySelectorAll('.box').forEach(box => box.classList.remove('active'));
-    clickedBox.classList.add('active');
-
-    // Hide all sections
-    document.querySelectorAll('.section').forEach(sec => {
-      sec.classList.remove('active-section');
-      // force reflow for restart animation
-      sec.style.opacity = '0';
-      sec.style.transform = 'scale(0.85)';
-    });
-
-    // Show target section with animation
-    const target = document.getElementById(id);
-    target.style.display = 'block';
-    setTimeout(() => {
-      target.classList.add('active-section');
-    }, 20);
-  }
-</script>
-
-</body>
-</html>
+  <div id="contact" class="section">
+    <h2>📞 Contact</h2>
+    <p>📧 Email: yourmail@example.com
