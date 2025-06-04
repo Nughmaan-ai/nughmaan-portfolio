@@ -13,42 +13,25 @@
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
       color: #e0e0e0;
       line-height: 1.6;
-      overflow-x: hidden;
     }
-
-    /* Loader */
     #loader {
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background: #000;
+      background: black;
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
+      font-size: 1.5rem;
+      z-index: 1000;
     }
-
-    .gear {
-      width: 60px;
-      height: 60px;
-      border: 6px solid white;
-      border-top: 6px solid transparent;
-      border-radius: 50%;
-      animation: rotate 1s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
     header {
       background: rgba(20, 20, 20, 0.9);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
     }
-
     .profile-photo {
       width: 150px;
       height: 150px;
@@ -58,7 +41,6 @@
       object-fit: cover;
       border: 4px solid #444;
     }
-
     .boxes {
       display: flex;
       flex-wrap: wrap;
@@ -66,7 +48,6 @@
       gap: 1rem;
       padding: 2rem 1rem;
     }
-
     .box {
       background: #1e1e1e;
       color: white;
@@ -77,21 +58,14 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      transform: scale(0.9);
-      animation: pop 0.6s ease forwards;
+      text-transform: uppercase;
+      font-weight: 700;
+      user-select: none;
     }
-
     .box:hover {
       transform: scale(1.05);
-      background: #fff;
-      color: #ff9800;
+      background: #333;
     }
-
-    @keyframes pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
     .section {
       display: none;
       max-width: 1000px;
@@ -99,18 +73,19 @@
       padding: 1rem;
       background: #222;
       border-radius: 10px;
+      box-shadow: 0 0 15px #ff9800aa;
     }
-
     .active {
       display: block;
     }
-
     h2 {
       border-bottom: 2px solid #444;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
     }
-
     .download-btn {
       background: #ff9800;
       color: white;
@@ -119,64 +94,110 @@
       border-radius: 5px;
       margin-top: 1rem;
       text-decoration: none;
+      display: inline-block;
+      font-weight: 700;
     }
-
     p {
       margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <!-- Loading screen -->
-  <div id="loader">
-    <div class="gear"></div>
-  </div>
+  <div id="loader">Loading... Please wait</div>
 
-  <!-- Main Content -->
   <header style="display:none;">
     <img src="my-photo.jpg" alt="Profile Photo" class="profile-photo" />
-    <h1>👨‍💼 Nughmaan Syed Ali Maricar</h1>
-    <p>💼 Experienced Visa Executive | 💻 Digital Advisor | 📊 Forex & Crypto Strategist | ⌚ Watch Seller</p>
-    <a class="download-btn" href="my resume.pdf" download>📄 Download CV</a>
+    <h1>Nughmaan Syed Ali Maricar</h1>
+    <p>Experienced Visa Executive | Digital Advisor | Forex & Crypto Strategist | Watch Seller</p>
+    <a class="download-btn" href="my resume.pdf" download>Download CV</a>
   </header>
 
   <div class="boxes" style="display:none;">
-    <div class="box" onclick="showSection('experience')">🧑‍💼 Experience</div>
-    <div class="box" onclick="showSection('education')">🎓 Education</div>
-    <div class="box" onclick="showSection('projects')">📁 Projects</div>
-    <div class="box" onclick="showSection('skills')">🛠️ Skills</div>
-    <div class="box" onclick="showSection('contact')">📞 Contact</div>
+    <div class="box" onclick="showSection('experience')">Experience</div>
+    <div class="box" onclick="showSection('education')">Education</div>
+    <div class="box" onclick="showSection('projects')">Projects</div>
+    <div class="box" onclick="showSection('skills')">Skills</div>
+    <div class="box" onclick="showSection('contact')">Contact</div>
   </div>
 
   <div id="experience" class="section">
-    <h2>🧑‍💼 Experience</h2>
-    <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com). Booked hotels and ensured customer satisfaction.</p>
-    <p><strong>Nisma Emporium (2021 - Present)</strong><br>Part-time Cashier and Accountant. Introduced new tools and advised on digital hardware/software upgrades. Improved workflow with digital systems.</p>
-    <p><strong>Forex / Crypto Trading (2022 - Present)</strong><br>Developed high win-rate strategies, managed risk, modified expert advisors, and created sound investment plans in crypto assets.</p>
-    <p><strong>Watch Selling (2021 - Present)</strong><br>Sold high-quality vintage and casual watches with personalized customer service. Built a loyal customer base through trust and product quality.</p>
-    <p><strong>Internship at Okinawa EV (2023)</strong><br>Participated in EV technology training, learned battery tech, motors, and green solutions for smart transportation.</p>
+    <h2>Experience</h2>
+    <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>
+      Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com). Booked hotels and ensured customer satisfaction.
+    </p>
+    <p><strong>Nisma Emporium (2021 - Present)</strong><br>
+      Part-time Cashier and Accountant. Introduced new tools and advised on digital hardware/software upgrades. Improved workflow with digital systems.
+    </p>
+    <p><strong>Forex / Crypto Trading (2022 - Present)</strong><br>
+      Developed high win-rate strategies, managed risk, modified expert advisors, and created sound investment plans in crypto assets.
+    </p>
+    <p><strong>Watch Selling (2021 - Present)</strong><br>
+      Sold high-quality vintage and casual watches with personalized customer service. Built a loyal customer base through trust and product quality.
+    </p>
+    <p><strong>Internship at Okinawa EV (2023)</strong><br>
+      Participated in EV technology training, learned battery tech, motors, and green solutions for smart transportation.
+    </p>
   </div>
 
   <div id="education" class="section">
-    <h2>🎓 Education</h2>
+    <h2>Education</h2>
     <p>Completed SSLC at Nagore Modern Matric HR Sec School (2020–2021)</p>
-    <p>Diploma in Electronics and Communication Engineering - Valivalam Desikar Polytechnic College (2021–2024)</p>
+    <p>Diploma in Electronics and Communication Engineering (2021–2024)</p>
+    <p>Forex Funded Trader Program (2024)</p>
+    <p>Google Fundamentals of Digital Marketing Certificate (2025)</p>
   </div>
 
-  <!-- JavaScript -->
+  <div id="projects" class="section">
+    <h2>Projects</h2>
+    <p><strong>Solar Fast Charging Station</strong><br>
+      Final year project providing renewable energy-based fast charging for electric vehicles.
+    </p>
+    <p><strong>Mini Tesla Coil</strong><br>
+      Science exhibition model to demonstrate wireless electricity and magnetic field effects.
+    </p>
+    <p><strong>Digital Tools for Nisma Emporium</strong><br>
+      Developed tools integrating accounting, inventory, and hardware support systems.
+    </p>
+    <p><strong>Promotional Campaign for GoMyArea.com</strong><br>
+      Designed flyers and digital goods to increase outreach and ticket bookings.
+    </p>
+  </div>
+
+  <div id="skills" class="section">
+    <h2>Skills & Certificates</h2>
+    <p><strong>Skills:</strong> Leadership, Multitasking, Creativity, Critical Thinking, Canva, Ninthware, MS Office (Intermediate), TradingView, MetaTrader, PCB Design, Marg ERP, Foxit Reader</p>
+    <p><strong>Certificates:</strong><br>
+      Google Fundamentals of Digital Marketing (2025)<br>
+      UNNATI English Communication & Life Skills (Infosys, 2023)<br>
+      PCB Design under Tamil Nadu Nan Muthalvan Scheme (2024)<br>
+      MS Office Intermediate by Microsoft<br>
+      HTML, C Programming, Flash Media by Uniq Software Solutions<br>
+      National Cyber Olympiad Certificate (2016, 2018)
+    </p>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: your-nughmaandece@gmail.com</p>
+    <p>Phone: +91-7598004283</p>
+    <p>LinkedIn: linkedin.com/in/nughmaan</p>
+  </div>
+
   <script>
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
       document.getElementById(id).classList.add('active');
     }
 
-    window.addEventListener('load', () => {
+    window.onload = function () {
       setTimeout(() => {
         document.getElementById('loader').style.display = 'none';
         document.querySelector('header').style.display = 'block';
         document.querySelector('.boxes').style.display = 'flex';
-      }, 1000);
-    });
+      }, 1500);
+    }
   </script>
 </body>
 </html>
