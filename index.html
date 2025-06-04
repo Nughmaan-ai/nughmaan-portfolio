@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>👨‍💻 Nughmaan S - Portfolio</title>
+  <title>Nughmaan S - Portfolio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-    * {margin: 0; padding: 0; box-sizing: border-box;}
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
@@ -78,9 +82,16 @@
     .active {
       display: block;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+    h1, h2, p, strong {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 > .emoji, h2 > .emoji, p > .emoji, strong > .emoji {
+      margin-right: 0.5em;
+      font-size: 1.3em;
+      line-height: 1;
+      user-select: none;
     }
     h2 {
       border-bottom: 2px solid #444;
@@ -100,6 +111,8 @@
       text-decoration: none;
       display: inline-block;
       font-weight: 700;
+      cursor: pointer;
+      user-select: none;
     }
     p {
       margin-bottom: 1rem;
@@ -107,71 +120,75 @@
   </style>
 </head>
 <body>
-
-  <div id="loader">⏳ Loading... Please wait</div>
+  <div id="loader">Loading... Please wait</div>
 
   <header style="display:none;">
     <img src="my-photo.jpg" alt="Profile Photo" class="profile-photo" />
-    <h1>👨‍💻 Nughmaan Syed Ali Maricar</h1>
-    <p>🛂 Experienced Visa Executive | 💻 Digital Advisor | 📈 Forex & Crypto Strategist | ⌚ Watch Seller</p>
+    <h1><span class="emoji">👨‍💻</span>Nughmaan Syed Ali Maricar</h1>
+    <p>
+      <span class="emoji">🛂</span>Experienced Visa Executive | 
+      <span class="emoji">💻</span>Digital Advisor | 
+      <span class="emoji">📈</span>Forex & Crypto Strategist | 
+      <span class="emoji">⌚</span>Watch Seller
+    </p>
     <a class="download-btn" href="my resume.pdf" download>📄 Download CV</a>
   </header>
 
   <div class="boxes" style="display:none;">
-    <div class="box" onclick="showSection('experience')">💼 Experience</div>
-    <div class="box" onclick="showSection('education')">🎓 Education</div>
-    <div class="box" onclick="showSection('projects')">🛠️ Projects</div>
-    <div class="box" onclick="showSection('skills')">🧠 Skills</div>
-    <div class="box" onclick="showSection('contact')">📞 Contact</div>
+    <div class="box" onclick="showSection('experience')">Experience</div>
+    <div class="box" onclick="showSection('education')">Education</div>
+    <div class="box" onclick="showSection('projects')">Projects</div>
+    <div class="box" onclick="showSection('skills')">Skills</div>
+    <div class="box" onclick="showSection('contact')">Contact</div>
   </div>
 
   <div id="experience" class="section">
-    <h2>💼 Experience</h2>
-    <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>
+    <h2><span class="emoji">💼</span>Experience</h2>
+    <p><strong><span class="emoji">🏢</span>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>
       Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com). Booked hotels and ensured customer satisfaction.
     </p>
-    <p><strong>Nisma Emporium (2021 - Present)</strong><br>
+    <p><strong><span class="emoji">🏬</span>Nisma Emporium (2021 - Present)</strong><br>
       Part-time Cashier and Accountant. Introduced new tools and advised on digital hardware/software upgrades. Improved workflow with digital systems.
     </p>
-    <p><strong>Forex / Crypto Trading (2022 - Present)</strong><br>
+    <p><strong><span class="emoji">📊</span>Forex / Crypto Trading (2022 - Present)</strong><br>
       Developed high win-rate strategies, managed risk, modified expert advisors, and created sound investment plans in crypto assets.
     </p>
-    <p><strong>Watch Selling (2021 - Present)</strong><br>
+    <p><strong><span class="emoji">⌚</span>Watch Selling (2021 - Present)</strong><br>
       Sold high-quality vintage and casual watches with personalized customer service. Built a loyal customer base through trust and product quality.
     </p>
-    <p><strong>Internship at Okinawa EV (2023)</strong><br>
+    <p><strong><span class="emoji">⚡</span>Internship at Okinawa EV (2023)</strong><br>
       Participated in EV technology training, learned battery tech, motors, and green solutions for smart transportation.
     </p>
   </div>
 
   <div id="education" class="section">
-    <h2>🎓 Education</h2>
-    <p>Completed SSLC at Nagore Modern Matric HR Sec School (2020–2021)</p>
-    <p>Diploma in Electronics and Communication Engineering (2021–2024)</p>
-    <p>Forex Funded Trader Program (2024)</p>
-    <p>Google Fundamentals of Digital Marketing Certificate (2025)</p>
+    <h2><span class="emoji">🎓</span>Education</h2>
+    <p><span class="emoji">📘</span>Completed SSLC at Nagore Modern Matric HR Sec School (2020–2021)</p>
+    <p><span class="emoji">🎓</span>Diploma in Electronics and Communication Engineering (2021–2024)</p>
+    <p><span class="emoji">📜</span>Forex Funded Trader Program (2024)</p>
+    <p><span class="emoji">📑</span>Google Fundamentals of Digital Marketing Certificate (2025)</p>
   </div>
 
   <div id="projects" class="section">
-    <h2>🛠️ Projects</h2>
-    <p><strong>Solar Fast Charging Station</strong><br>
+    <h2><span class="emoji">🛠️</span>Projects</h2>
+    <p><span class="emoji">🔋</span><strong>Solar Fast Charging Station</strong><br>
       Final year project providing renewable energy-based fast charging for electric vehicles.
     </p>
-    <p><strong>Mini Tesla Coil</strong><br>
+    <p><span class="emoji">⚡</span><strong>Mini Tesla Coil</strong><br>
       Science exhibition model to demonstrate wireless electricity and magnetic field effects.
     </p>
-    <p><strong>Digital Tools for Nisma Emporium</strong><br>
+    <p><span class="emoji">🧰</span><strong>Digital Tools for Nisma Emporium</strong><br>
       Developed tools integrating accounting, inventory, and hardware support systems.
     </p>
-    <p><strong>Promotional Campaign for GoMyArea.com</strong><br>
+    <p><span class="emoji">🎨</span><strong>Promotional Campaign for GoMyArea.com</strong><br>
       Designed flyers and digital goods to increase outreach and ticket bookings.
     </p>
   </div>
 
   <div id="skills" class="section">
-    <h2>🧠 Skills & Certificates</h2>
-    <p><strong>Skills:</strong> Leadership, Multitasking, Creativity, Critical Thinking, Canva, Ninthware, MS Office (Intermediate), TradingView, MetaTrader, PCB Design, Marg ERP, Foxit Reader</p>
-    <p><strong>Certificates:</strong><br>
+    <h2><span class="emoji">🧠</span>Skills & Certificates</h2>
+    <p><span class="emoji">⚙️</span><strong>Skills:</strong> Leadership, Multitasking, Creativity, Critical Thinking, Canva, Ninthware, MS Office (Intermediate), TradingView, MetaTrader, PCB Design, Marg ERP, Foxit Reader</p>
+    <p><span class="emoji">📜</span><strong>Certificates:</strong><br>
       Google Fundamentals of Digital Marketing (2025)<br>
       UNNATI English Communication & Life Skills (Infosys, 2023)<br>
       PCB Design under Tamil Nadu Nan Muthalvan Scheme (2024)<br>
@@ -182,29 +199,33 @@
   </div>
 
   <div id="contact" class="section">
-    <h2>📞 Contact</h2>
-    <p>Email: nughmaandece@gmail.com</p>
-    <p>Phone: +91 7598004283 | UAE: +971 58 622 7740</p>
+    <h2><span class="emoji">📞</span>Contact</h2>
+    <p><span class="emoji">✉️</span>Email: nughmaanfx@gmail.com</p>
+    <p><span class="emoji">📱</span>Phone (UAE): +971 58 622 7740</p>
+    <p><span class="emoji">📞</span>Phone (India): +91 75980 04283</p>
+    <p><span class="emoji">🏠</span>Address: Nagore, Nagapattinam District, Tamil Nadu, India</p>
   </div>
 
   <script>
-    // Show loader for 2 seconds then show content
+    // Simple loader and show content after 2 seconds
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('loader').style.display = 'none';
         document.querySelector('header').style.display = 'block';
         document.querySelector('.boxes').style.display = 'flex';
-        showSection('experience'); // default section
+        // Show default section
+        showSection('experience');
       }, 2000);
     });
 
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(sec => {
+        sec.classList.remove('active');
       });
-      document.getElementById(id).classList.add('active');
+      const activeSection = document.getElementById(id);
+      if(activeSection) activeSection.classList.add('active');
     }
   </script>
-
 </body>
 </html>
