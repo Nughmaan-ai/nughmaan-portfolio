@@ -1,0 +1,377 @@
+import React, { useState, useEffect } from "react";
+
+const data = {
+  experience: `GO MY AREA TOURS AND TRAVELS / BAB AL NOOR LLC
+As a UAE Visa Executive with Ninthware Ticketing and GGC Visa Consultant, I handle B2B and B2C visa queries, introduce new modules and techniques, maintain the ticket portal gomyarea.com, and manage hotel bookings. (2024 - Present)
+
+NISMA EMPORIUM
+Worked as cashier and accountant. Introduced new digital tools and software as a digital advisor for hardware and software solutions. (Part-time, 2021 - Present)
+
+FOREX/CRYPTO
+Trading since 2022 using multiple high win-rate strategies, experience modifying Expert Advisors (EA), and designing good investment plans.
+
+WATCH SELLING
+Selling high-quality vintage and casual watches to customers with care and passion for watches. (2021 - Present)
+
+INTERNSHIP AT OKINAWA EV
+Interned in 2023 gaining practical experience in electric vehicle technologies.`,
+
+  education: `SSLC at Nagore Modern Matric Hr Sec School (2020 - 2021)
+Diploma in Electronics Communication Engineering (2021 - 2024)
+Completed Forex funded firm training (2024)
+Google Fundamentals of Digital Marketing (2025)`,
+
+  projects: `Solar Fast Charging - Final year project focusing on renewable energy solutions with solar-powered fast charging systems.
+
+Mini Tesla Coil - Scientific demonstration project showcasing electromagnetic induction and resonance.
+
+Digital Project Tools and Software for Nisma Emporium - Developed and implemented software and hardware tools to improve digital operations.
+
+Promotional Campaign for Gomyarea.com - Created flyers and promotional materials to enhance brand visibility.`,
+
+  skills: `Leadership
+Multitasking
+Creativity
+Critical Thinking
+Canva
+Ninthware
+MS Office (Intermediate)
+TradingView and MetaTrader
+PCB Design
+Marg ERP
+Foxit`,
+
+  contact: `Email: nughmaandece@gmail.com
+Phone: +91 7598004283 (Call & WhatsApp)
+Instagram: @17nuxo`
+};
+
+const boxes = [
+  { id: "experience", label: "EXPERIENCE" },
+  { id: "education", label: "EDUCATION" },
+  { id: "projects", label: "PROJECTS" },
+  { id: "skills", label: "SKILLS" },
+  { id: "contact", label: "CONTACT" }
+];
+
+export default function Portfolio() {
+  const [activeBox, setActiveBox] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading for 1.5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const toggleBox = (id) => {
+    setActiveBox(activeBox === id ? null : id);
+  };
+
+  // Create some floating dots for the live background
+  const dots = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    size: Math.random() * 8 + 4,
+    left: Math.random() * 100,
+    delay: Math.random() * 15
+  }));
+
+  return (
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body, html, #root {
+          height: 100%;
+          margin: 0;
+          font-family: 'Montserrat', sans-serif;
+          background: #0e0e14;
+          color: #eee;
+          overflow-x: hidden;
+        }
+
+        .live-bg {
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: radial-gradient(circle at center, #141423 0%, #0e0e14 80%);
+          overflow: hidden;
+          z-index: -1;
+        }
+
+        .dot {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(100, 150, 255, 0.15);
+          filter: drop-shadow(0 0 4px #64a6ff33);
+          animation-name: float;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes float {
+          0% {
+            transform: translateY(100vh) translateX(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-10vh) translateX(50vw);
+            opacity: 0;
+          }
+        }
+
+        .container {
+          max-width: 900px;
+          margin: 2rem auto 5rem auto;
+          padding: 0 1rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        h1 {
+          text-align: center;
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #7abaff;
+          user-select: none;
+        }
+
+        .profile-photo {
+          display: block;
+          max-width: 140px;
+          height: 140px;
+          margin: 0 auto 1rem auto;
+          border-radius: 50%;
+          border: 3px solid #7abaff;
+          box-shadow: 0 0 12px #7abaff88;
+          object-fit: cover;
+        }
+
+        .bio {
+          text-align: center;
+          margin-bottom: 2rem;
+          font-size: 1rem;
+          line-height: 1.6;
+          max-width: 650px;
+          margin-left: auto;
+          margin-right: auto;
+          color: #ccc;
+          white-space: pre-line;
+        }
+
+        .boxes {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 1rem;
+        }
+
+        .box {
+          background: #1a1a2e;
+          border-radius: 10px;
+          box-shadow: 0 0 15px #284f9b88;
+          cursor: pointer;
+          padding: 1rem 1.5rem;
+          transition: background 0.3s ease;
+          user-select: none;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .box:hover {
+          background: #284f9b;
+          box-shadow: 0 0 20px #7abaffcc;
+        }
+
+        .box-header {
+          font-weight: 700;
+          font-size: 1.15rem;
+          text-transform: uppercase;
+          color: #a6caf0;
+          letter-spacing: 1.5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .arrow {
+          transition: transform 0.3s ease;
+          font-size: 1.4rem;
+          color: #7abaffcc;
+          user-select: none;
+        }
+
+        .arrow.open {
+          transform: rotate(90deg);
+        }
+
+        .box-content {
+          margin-top: 0.8rem;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.6s ease, opacity 0.6s ease;
+          font-size: 0.9rem;
+          line-height: 1.5;
+          color: #ddd;
+          white-space: pre-line;
+          user-select: text;
+        }
+
+        .box-content.open {
+          max-height: 1000px; /* enough for content */
+          opacity: 1;
+        }
+
+        .download-cv {
+          margin: 1rem 0;
+          text-align: center;
+        }
+
+        .download-cv button {
+          background: #7abaff;
+          border: none;
+          padding: 0.6rem 1.3rem;
+          font-weight: 700;
+          font-size: 1rem;
+          border-radius: 25px;
+          cursor: pointer;
+          color: #0e0e14;
+          transition: background 0.3s ease;
+        }
+
+        .download-cv button:hover {
+          background: #5a8dcc;
+          color: #e1e7f1;
+        }
+
+        /* Loading screen */
+        .loading-screen {
+          position: fixed;
+          inset: 0;
+          background: #0e0e14;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+          color: #7abaff;
+          font-size: 1.3rem;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          font-family: monospace;
+          user-select: none;
+        }
+
+        /* Watch mechanic style loader */
+        .loader {
+          border: 5px solid #222;
+          border-top: 5px solid #7abaff;
+          border-radius: 50%;
+          width: 48px;
+          height: 48px;
+          animation: spin 1.5s linear infinite;
+          margin-right: 12px;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg);}
+          100% {transform: rotate(360deg);}
+        }
+      `}</style>
+
+      {loading ? (
+        <div className="loading-screen" aria-label="Loading content">
+          <div className="loader" />
+          Loading...
+        </div>
+      ) : (
+        <>
+          {/* Live animated background */}
+          <div className="live-bg" aria-hidden="true">
+            {dots.map(({ id, size, left, delay }) => (
+              <div
+                key={id}
+                className="dot"
+                style={{
+                  width: size,
+                  height: size,
+                  left: `${left}vw`,
+                  bottom: "-10vh",
+                  animationDuration: `${15 + delay}s`,
+                  animationDelay: `${delay}s`
+                }}
+              />
+            ))}
+          </div>
+
+          <main className="container" role="main" aria-label="Portfolio content">
+            <h1>MY PORTFOLIO</h1>
+
+            {/* Profile photo: Replace 'your-photo.jpg' with your actual image path or URL */}
+            <img
+              src="your-photo.jpg"
+              alt="Nughmaan Syed Ali Maricar"
+              className="profile-photo"
+              loading="lazy"
+            />
+
+            <p className="bio">
+              {/* Sample bio text */}
+              Enthusiastic professional with diverse experience in travel, forex, digital marketing, and sales. Passionate about technology, watches, and continuous learning.
+            </p>
+
+            <section className="boxes" aria-label="Portfolio sections">
+              {boxes.map(({ id, label }) => (
+                <article
+                  key={id}
+                  className="box"
+                  onClick={() => toggleBox(id)}
+                  tabIndex={0}
+                  role="button"
+                  aria-expanded={activeBox === id}
+                  aria-controls={`${id}-content`}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggleBox(id);
+                    }
+                  }}
+                >
+                  <header className="box-header">
+                    {label}
+                    <span className={`arrow ${activeBox === id ? "open" : ""}`} aria-hidden="true">
+                      ▶
+                    </span>
+                  </header>
+
+                  <div
+                    id={`${id}-content`}
+                    className={`box-content ${activeBox === id ? "open" : ""}`}
+                  >
+                    {data[id]}
+                    {/* Show Download CV button only in Experience box */}
+                    {id === "experience" && (
+                      <div className="download-cv">
+                        <a
+                          href="resume.pdf"
+                          download="Nughmaan_Syed_Resume.pdf"
+                          aria-label="Download Resume"
+                        >
+                          <button type="button">DOWNLOAD CV</button>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </section>
+          </main>
+        </>
+      )}
+    </>
+  );
+}
