@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nughmaan Syed Ali Maricar - Portfolio</title>
+  <title>Nughmaan S - Portfolio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
@@ -103,6 +103,7 @@
   </style>
 </head>
 <body>
+
   <div id="loader">Loading... Please wait</div>
 
   <header style="display:none;">
@@ -181,24 +182,27 @@
     <p>Email: nughmaandece@gmail.com</p>
     <p>Phone: +91-7598004283</p>
     <p>LinkedIn: linkedin.com/in/nughmaan</p>
-     <p>Instagram: 17nuxo</p>
+    <p>Instagram: 17nuxo</p>
   </div>
 
   <script>
+    // Function to show section and hide others
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(section => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
     }
 
-    window.onload = function () {
-      setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-        document.querySelector('header').style.display = 'block';
-        document.querySelector('.boxes').style.display = 'flex';
-      }, 1500);
-    }
+    // On window load, hide loader and show header + nav
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+      document.querySelector('header').style.display = 'block';
+      document.querySelector('.boxes').style.display = 'flex';
+      // Show default section on load
+      showSection('experience');
+    });
   </script>
 </body>
 </html>
