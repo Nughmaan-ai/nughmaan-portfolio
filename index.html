@@ -83,7 +83,8 @@
 
     .box:hover {
       transform: scale(1.05);
-      background: #333;
+      background: #fff;
+      color: #ff9800;
     }
 
     @keyframes pop {
@@ -142,56 +143,40 @@
   <div class="boxes" style="display:none;">
     <div class="box" onclick="showSection('experience')">🧑‍💼 Experience</div>
     <div class="box" onclick="showSection('education')">🎓 Education</div>
-    <div class="box" onclick="showSection('projects')">🛠 Projects</div>
-    <div class="box" onclick="showSection('skills')">🧠 Skills</div>
+    <div class="box" onclick="showSection('projects')">📁 Projects</div>
+    <div class="box" onclick="showSection('skills')">🛠️ Skills</div>
     <div class="box" onclick="showSection('contact')">📞 Contact</div>
   </div>
 
   <div id="experience" class="section">
     <h2>🧑‍💼 Experience</h2>
-    <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>Visa Executive using Ninthware software, managing B2B/B2C queries, booking hotels, and handling gomyarea.com.</p>
-    <p><strong>Nisma Emporium (2021 - Present)</strong><br>Cashier/Accountant advising digital upgrades and managing finances.</p>
-    <p><strong>Forex / Crypto Trading (2022 - Present)</strong><br>Built high win-rate strategies, managed risk, and invested in crypto.</p>
-    <p><strong>Watch Selling (2021 - Present)</strong><br>Sold vintage/casual watches with personalized service and customer trust.</p>
-    <p><strong>Internship at Okinawa EV (2023)</strong><br>Trained in EV tech, batteries, motors, and smart mobility.</p>
+    <p><strong>Go My Area Tours and Travels / Bab Al Noor LLC (2024 - Present)</strong><br>Working as a UAE Visa Executive with Ninthware ticketing software, handling B2B and B2C queries. Introduced new modules and maintained ticket portal (gomyarea.com). Booked hotels and ensured customer satisfaction.</p>
+    <p><strong>Nisma Emporium (2021 - Present)</strong><br>Part-time Cashier and Accountant. Introduced new tools and advised on digital hardware/software upgrades. Improved workflow with digital systems.</p>
+    <p><strong>Forex / Crypto Trading (2022 - Present)</strong><br>Developed high win-rate strategies, managed risk, modified expert advisors, and created sound investment plans in crypto assets.</p>
+    <p><strong>Watch Selling (2021 - Present)</strong><br>Sold high-quality vintage and casual watches with personalized customer service. Built a loyal customer base through trust and product quality.</p>
+    <p><strong>Internship at Okinawa EV (2023)</strong><br>Participated in EV technology training, learned battery tech, motors, and green solutions for smart transportation.</p>
   </div>
 
   <div id="education" class="section">
     <h2>🎓 Education</h2>
-    <p><strong>Diploma in Electronics and Communication Engineering</strong><br>Valivalam Desikar Polytechnic College, Nagapattinam</p>
-    <p><strong>SSLC</strong><br>Completed secondary education with a focus on science & technology.</p>
+    <p>Completed SSLC at Nagore Modern Matric HR Sec School (2020–2021)</p>
+    <p>Diploma in Electronics and Communication Engineering - Valivalam Desikar Polytechnic College (2021–2024)</p>
   </div>
 
-  <div id="projects" class="section">
-    <h2>🛠 Projects</h2>
-    <p>More details coming soon...</p>
-  </div>
-
-  <div id="skills" class="section">
-    <h2>🧠 Skills</h2>
-    <p>Visa Processing • Forex/Crypto • Accounting • HTML/CSS • Automation • Travel Consultancy</p>
-  </div>
-
-  <div id="contact" class="section">
-    <h2>📞 Contact</h2>
-    <p>Email: nughmaan@example.com</p>
-    <p>Phone: +91 75980 04283</p>
-  </div>
-
+  <!-- JavaScript -->
   <script>
-    // Loader removal
-    setTimeout(() => {
-      document.getElementById('loader').style.display = 'none';
-      document.querySelector('header').style.display = 'block';
-      document.querySelector('.boxes').style.display = 'flex';
-      document.body.style.overflow = 'auto';
-    }, 1000);
-
-    // Show section
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.querySelector('header').style.display = 'block';
+        document.querySelector('.boxes').style.display = 'flex';
+      }, 1000);
+    });
   </script>
 </body>
 </html>
